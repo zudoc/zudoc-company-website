@@ -44,8 +44,8 @@ function App() {
     >
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
-      {/* Main Content Area */}
-      <main>
+      {/* Main Content Area - Added padding top to account for fixed navbar */}
+      <main className="pt-24 md:pt-28">
         {renderContent()}
       </main>
 

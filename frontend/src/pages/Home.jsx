@@ -22,26 +22,26 @@ function Home({ setCurrentPage }) {
 
       {/* Cards Section */}
       <div className="w-full max-w-7xl mt-24 px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {services.map((card, index) => (
             <button
               key={card.id}
               onClick={() => setCurrentPage(card.id)}
-              className="group relative bg-white p-8 rounded-[40px] shadow-xl shadow-cyan-900/5 border border-cyan-100/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-900/10 text-left"
+              className="group relative bg-white p-4 sm:p-8 rounded-[24px] sm:rounded-[40px] shadow-xl shadow-cyan-900/5 border border-cyan-100/50 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-900/10 text-left flex flex-col justify-between"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${card.color} opacity-[0.03] rounded-bl-full group-hover:scale-150 transition-transform duration-700`} />
+              <div className={`absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br ${card.color} opacity-[0.03] rounded-bl-full group-hover:scale-150 transition-transform duration-700`} />
 
-              <div className="relative z-10">
-                <h3 className="text-3xl font-extrabold text-slate-800 mb-1 group-hover:text-cyan-700 transition-colors uppercase">{card.title}</h3>
-                <p className="text-slate-500 font-medium">{card.sub}</p>
+              <div className="relative z-10 space-y-1 sm:space-y-2">
+                <h3 className="text-lg sm:text-3xl font-extrabold text-slate-800 group-hover:text-cyan-700 transition-colors uppercase leading-tight">{card.title}</h3>
+                <p className="text-xs sm:text-base text-slate-500 font-medium leading-snug">{card.sub}</p>
               </div>
 
-              <div className="mt-8 flex justify-end transition-transform duration-500 group-hover:scale-110">
+              <div className="mt-4 sm:mt-8 flex justify-end transition-transform duration-500 group-hover:scale-110">
                 <img
                   src={card.icon}
                   alt={card.title}
-                  className="w-40 h-40 object-contain drop-shadow-lg"
+                  className="w-16 h-16 sm:w-40 sm:h-40 object-contain drop-shadow-lg"
                 />
               </div>
             </button>

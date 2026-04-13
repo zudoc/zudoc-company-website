@@ -171,19 +171,19 @@ function About() {
         <div className="w-full max-w-[1280px] bg-gradient-to-r from-[#007074] to-[#018181] rounded-[48px] shadow-2xl relative flex flex-col lg:flex-row items-stretch min-h-[280px] overflow-visible">
           {/* Grounded Doctor/Patient Image */}
           <img 
-            className="w-full max-w-[300px] lg:max-w-none lg:w-auto lg:h-[380px] absolute bottom-0 left-0 lg:left-[-30px] z-10 pointer-events-none object-contain block drop-shadow-[0_10px_30px_rgba(0,0,0,0.15)] mb-[-1px]" 
+            className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-none lg:w-auto lg:h-[380px] absolute bottom-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[-30px] z-10 pointer-events-none object-contain block drop-shadow-[0_10px_30px_rgba(0,0,0,0.15)] mb-[-1px]" 
             src={aboutContent.patientFirst.img1} 
             alt="Patient Care" 
           />
           
           {/* Text Content */}
-          <div className="flex-1 p-10 lg:p-16 lg:pl-[500px] lg:pr-12 z-0 flex flex-col justify-center items-start gap-4">
+          <div className="flex-1 px-8 pt-10 pb-[220px] sm:pb-[260px] lg:p-16 lg:pb-16 lg:pl-[460px] xl:pl-[500px] lg:pr-12 z-0 flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4">
             <h2 className="text-white text-4xl lg:text-5xl font-bold leading-tight tracking-tight">{aboutContent.patientFirst.title}</h2>
             <p className="text-white/90 text-lg lg:text-xl font-medium leading-relaxed max-w-2xl">{aboutContent.patientFirst.description}</p>
           </div>
           
           {/* Popping Rocket Image */}
-          <div className="absolute -top-16 -right-12 w-32 lg:w-56 z-20 pointer-events-none">
+          <div className="absolute -top-12 sm:-top-16 -right-6 sm:-right-12 w-24 sm:w-32 lg:w-56 z-20 pointer-events-none">
              <img 
                className="w-full h-auto drop-shadow-2xl rotate-[45deg]" 
                src={aboutContent.patientFirst.img2} 
