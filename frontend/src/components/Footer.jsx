@@ -20,7 +20,7 @@ function Footer() {
 
         {/* Social Icons Section */}
         <div className="flex gap-4 mb-2">
-          {footerContent.socials.map((social, idx) => {
+          {footerContent.socials.filter(s => s.url).map((social, idx) => {
             let bgClass = "";
             let icon = null;
             
