@@ -4,14 +4,14 @@ function Laboratory() {
   const { hero, howItWorks, uploadFeature, smartBooking, controlTower, campaignManager, cta } = laboratoryContent;
 
   return (
-    <main className="relative pt-20 pb-32 flex flex-col items-center overflow-hidden">
+    <main className="relative pt-6 md:pt-20 pb-32 flex flex-col items-center overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-200/30 rounded-full blur-[120px] -z-10 animate-pulse" />
 
       {/* 1. Hero Section */}
-      <div className="max-w-7xl w-full px-6 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom duration-1000">
-        <div className="flex flex-col items-start text-left space-y-6">
-          <div className="inline-flex justify-start items-center gap-2 px-4 py-1.5 bg-gray-200 rounded-full text-sm font-bold uppercase tracking-wider mb-2">
+      <div className="max-w-7xl w-full px-6 mt-6 md:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-in fade-in slide-in-from-bottom duration-1000">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+          <div className="inline-flex justify-center lg:justify-start items-center gap-2 px-4 py-1.5 bg-gray-200 rounded-full text-sm font-bold uppercase tracking-wider mb-2">
             <div className="w-3 h-3 bg-teal-800" />
             <span className="text-teal-800">{hero.badge}</span>
           </div>
@@ -22,7 +22,7 @@ function Laboratory() {
             </span> <br />
             {hero.title.line3}
           </h1>
-          <p className="max-w-md text-xl text-stone-500 font-medium leading-relaxed">
+          <p className="max-w-md mx-auto lg:mx-0 text-xl text-stone-500 font-medium leading-relaxed">
             {hero.description}
           </p>
           <div className="pt-2">

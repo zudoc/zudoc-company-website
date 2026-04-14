@@ -58,11 +58,11 @@ function Hospital() {
             <div className="relative flex justify-between items-start z-10 pr-2 pl-2">
               {trackPatient.steps.map((step) => {
                 let StepIcon;
-                if (step.id === 'checkIn') StepIcon = <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>;
-                else if (step.id === 'treatment') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12h4l3-9 5 18 3-9h6" /></svg>;
-                else if (step.id === 'recovery') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>;
-                else if (step.id === 'reports') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>;
-                else StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>;
+                if (step.id === 'checkIn') StepIcon = <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>;
+                else if (step.id === 'treatment') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12h4l3-9 5 18 3-9h6"/></svg>;
+                else if (step.id === 'recovery') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>;
+                else if (step.id === 'reports') StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>;
+                else StepIcon = <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
 
                 return (
                   <div key={step.id} className="flex flex-col items-center w-36 relative group">
@@ -87,9 +87,9 @@ function Hospital() {
       <section className="w-full max-w-7xl px-6 mt-32 space-y-12">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-100 rounded-full">
-              <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-green-700 text-xs font-bold uppercase tracking-wide">{resourceAvailability.badge}</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-500/10 rounded-full border border-green-500/20">
+              <svg className="w-3.5 h-3.5 text-green-600 animate-pulse" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+              <span className="text-green-700 text-xs font-black uppercase tracking-wider">{resourceAvailability.badge}</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
               {resourceAvailability.title}
@@ -154,16 +154,16 @@ function Hospital() {
                          let bg, text, border, icon;
                          if (bed.status === 'available') {
                             bg = 'bg-green-50'; border = 'border-green-100'; text = 'text-green-700';
-                            icon = <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+                            icon = <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>;
                          } else if (bed.status === 'cleaning') {
                             bg = 'bg-amber-50'; border = 'border-amber-100'; text = 'text-amber-700';
-                            icon = <svg className="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v8m0 0H8.5l-1 6h9l-1-6H12Zm-2.5 6v6m5-6v6" /></svg>;
+                            icon = <svg className="w-4 h-4 opacity-80" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="m15 5-2-2L9 7l2 2z"/><path d="m2 22 5-5"/><path d="M11 20c-1.1 0-2-.9-2-2V7l4-4 4 4v11c0 1.1-.9 2-2 2h-4Z"/></svg>;
                          } else if (bed.status === 'occupied') {
                             bg = 'bg-red-50'; border = 'border-red-100'; text = 'text-red-700';
-                            icon = <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>;
+                            icon = <svg className="w-4 h-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
                          } else {
                             bg = 'bg-slate-100'; border = 'border-slate-200'; text = 'text-slate-500';
-                            icon = <svg className="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>;
+                            icon = <svg className="w-4 h-4 opacity-80" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>;
                          }
                          return (
                            <div key={idx} className={`py-2 rounded-xl border-2 ${bg} ${border} flex flex-col items-center justify-center gap-1.5`}>
@@ -204,9 +204,9 @@ function Hospital() {
                {resourceAvailability.icuBeds.map((bed, idx) => (
                  <div key={idx} className="p-6 bg-white rounded-[32px] shadow-xl shadow-cyan-900/5 border border-gray-200/60 flex flex-col gap-4">
                    <div className="flex justify-between items-center">
-                     <div className="w-10 h-10 bg-teal-800/10 rounded-xl flex items-center justify-center">
-                        <div className="w-6 h-6 bg-cyan-700/80 rounded-md" />
-                     </div>
+                      <div className="w-10 h-10 bg-teal-800/10 rounded-xl flex items-center justify-center">
+                         <svg className="w-6 h-6 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                      </div>
                      <div className={`px-3 py-1.5 rounded-full flex items-center gap-2 ${bed.status === 'Available' ? 'bg-green-500/10 text-green-600' : 'bg-red-500/10 text-red-600'}`}>
                         <span className="text-sm font-bold">{bed.status}</span>
                      </div>
@@ -226,30 +226,33 @@ function Hospital() {
                {resourceAvailability.otSlots.map((slot, idx) => (
                  <div key={idx} className="p-6 bg-white rounded-[32px] shadow-xl shadow-cyan-900/5 border border-gray-200/60 flex flex-col gap-4">
                    <div className="flex justify-between items-center">
-                     <div className="flex items-center gap-3">
-                       <div className="w-10 h-10 bg-teal-800/10 rounded-xl flex items-center justify-center">
-                          <span className="text-cyan-700 text-xl font-bold">{slot.number}</span>
-                       </div>
-                       <div>
-                         <div className="text-lg font-extrabold text-neutral-900">{slot.id}</div>
-                         <div className="text-sm font-semibold text-neutral-400 capitalize text-right">{slot.department}</div>
-                       </div>
-                     </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-teal-800/10 rounded-xl flex items-center justify-center">
+                           <svg className="w-6 h-6 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <div>
+                          <div className="text-lg font-extrabold text-neutral-900">{slot.id}</div>
+                          <div className="text-sm font-semibold text-neutral-400 capitalize">{slot.department}</div>
+                        </div>
+                      </div>
                      <div className={`px-3 py-1.5 rounded-full flex items-center gap-2 ${slot.status === 'Available' ? 'bg-green-500/10 text-green-600' : 'bg-neutral-500/10 text-neutral-500'}`}>
                         <span className="text-sm font-bold">{slot.status}</span>
                      </div>
                    </div>
-                   <div className="text-xl font-bold text-zinc-800 mt-2">{slot.doctor}</div>
-                   <div className="flex flex-col gap-2 mt-2">
-                     <div className="flex items-center gap-2 text-stone-500 font-semibold">
-                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                       {slot.date}
-                     </div>
-                     <div className="flex items-center gap-2 text-stone-500 font-semibold">
-                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                       {slot.time}
-                     </div>
-                   </div>
+                   <div className="text-xl font-bold text-zinc-800 mt-2 flex items-center gap-2">
+                       <svg className="w-5 h-5 text-teal-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                       {slot.doctor}
+                    </div>
+                    <div className="flex flex-col gap-2 mt-2">
+                      <div className="flex items-center gap-2 text-stone-500 font-semibold">
+                        <svg className="w-5 h-5 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        {slot.date}
+                      </div>
+                      <div className="flex items-center gap-2 text-stone-500 font-semibold">
+                        <svg className="w-5 h-5 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        {slot.time}
+                      </div>
+                    </div>
                  </div>
                ))}
              </div>
@@ -276,8 +279,8 @@ function Hospital() {
                 <button className="px-4 py-1.5 rounded-full bg-white text-teal-800 shadow-sm">Weekly</button>
                 <button className="px-4 py-1.5 rounded-full text-zinc-600 hover:text-zinc-900">Monthly</button>
               </div>
-              <button className="px-5 py-2 border border-gray-200 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-gray-50">
-                <div className="w-3 h-1.5 border-t-2 border-b-2 border-zinc-700" />
+              <button className="px-5 py-2 border border-gray-200 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-gray-50 text-zinc-700 transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                 Filter
               </button>
             </div>
@@ -329,10 +332,8 @@ function Hospital() {
                       </span>
                     </td>
                     <td className="px-8 py-5 text-right">
-                       <button className="p-2 hover:bg-gray-100 rounded-full">
-                         <div className="w-1 h-1 bg-zinc-400 rounded-full mb-1" />
-                         <div className="w-1 h-1 bg-zinc-400 rounded-full mb-1" />
-                         <div className="w-1 h-1 bg-zinc-400 rounded-full" />
+                       <button className="p-2 hover:bg-gray-100 rounded-full text-zinc-400 hover:text-zinc-600 transition-colors">
+                         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                        </button>
                     </td>
                   </tr>
@@ -361,22 +362,32 @@ function Hospital() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {insights.stats.map((stat, i) => (
-             <div key={i} className="bg-white p-6 rounded-3xl shadow-lg shadow-cyan-900/5 border border-gray-100 flex flex-col justify-between">
-                <div className="flex items-center gap-2 mb-4 text-xs font-bold text-zinc-600 uppercase">
-                   <div className={`w-3 h-3 rounded-full ${stat.color}`} />
-                   {stat.title}
-                </div>
-                <div className="text-4xl font-extrabold text-black mb-1">{stat.value}</div>
-                <div className="text-xs text-stone-500">{stat.subtext}</div>
-             </div>
+              <div key={i} className="bg-white p-6 rounded-[32px] shadow-lg shadow-cyan-900/5 border border-gray-100 flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+                 <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-wider">
+                       <div className={`w-2 h-2 rounded-full ${stat.color} animate-pulse`} />
+                       {stat.title}
+                    </div>
+                    <div className={`p-2 rounded-xl ${stat.color.replace('bg-', 'bg-')}/10 text-cyan-700`}>
+                      {stat.title.includes('Scan') && <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>}
+                      {stat.title.includes('Converted') && <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>}
+                      {stat.title.includes('Satisfaction') && <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M18 10h.01"/><path d="M6 10h.01"/><path d="M8 15s1.5 2 4 2 4-2 4-2"/></svg>}
+                    </div>
+                 </div>
+                 <div className="text-4xl font-extrabold text-neutral-900 mb-1">{stat.value}</div>
+                 <div className="text-xs font-bold text-stone-400 uppercase">{stat.subtext}</div>
+              </div>
           ))}
-          <div className="bg-gradient-to-br from-teal-800 to-cyan-700 p-6 rounded-3xl text-white flex flex-col justify-between">
-             <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase text-white/90">
-                <div className="w-3 h-2 border-b-2 border-l-2 border-white -rotate-45" />
+          <div className="bg-gradient-to-br from-teal-800 to-cyan-700 p-6 rounded-[32px] text-white flex flex-col justify-between shadow-xl shadow-teal-900/20 relative overflow-hidden group">
+             <div className="absolute top-0 right-0 p-4 opacity-15 transform translate-x-1 translate-y-[-4px] group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-24 h-24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="m3 17 6-6 4 4 8-8"/><polyline points="13 7 21 7 21 15"/></svg>
+             </div>
+             <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase text-white/90 relative z-10">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round"><path d="m3 17 6-6 4 4 8-8"/><polyline points="13 7 21 7 21 15"/></svg>
                 {insights.improvement.title}
              </div>
-             <div className="text-4xl font-extrabold mb-1">{insights.improvement.value}</div>
-             <div className="text-xs text-white/80">{insights.improvement.subtext}</div>
+             <div className="text-4xl font-extrabold mb-1 relative z-10">{insights.improvement.value}</div>
+             <div className="text-xs text-white/80 font-bold uppercase relative z-10">{insights.improvement.subtext}</div>
           </div>
         </div>
 

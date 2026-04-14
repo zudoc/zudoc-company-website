@@ -11,30 +11,43 @@ function Doctor() {
 
       {/* Hero Section */}
       <section className="w-full max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-20 md:pb-24 flex flex-col lg:flex-row items-center gap-12">
-        <div className="flex-1 flex flex-col items-start gap-6 animate-in fade-in slide-in-from-bottom duration-1000">
-          <div className="px-4 py-1.5 bg-gray-200/80 rounded-full inline-flex items-center gap-2">
-            <div className="w-3 h-3 bg-teal-800 rounded-full" />
-            <span className="text-teal-800 text-sm font-bold uppercase tracking-wide">{hero.badge}</span>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-neutral-800">
-            {hero.title.line1}<br />
-            {hero.title.line2}<br />
-            <span className="text-cyan-700">{hero.title.line3}</span>
-          </h1>
-          <p className="text-xl text-stone-500 font-medium max-w-lg leading-relaxed">
-            {hero.description}
-          </p>
-          <button className="mt-4 px-8 py-4 bg-teal-700 hover:bg-teal-800 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            {hero.buttonText}
-          </button>
+      <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left gap-6 animate-in fade-in slide-in-from-bottom duration-1000">
+        
+        <div className="px-4 py-1.5 bg-gray-200/80 rounded-full inline-flex items-center gap-2">
+          <div className="w-3 h-3 bg-teal-800 rounded-full" />
+          <span className="text-teal-800 text-sm font-bold uppercase tracking-wide">
+            {hero.badge}
+          </span>
         </div>
-        <div className="flex-1 w-full max-w-xl relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-800/10 to-cyan-700/20 rounded-full blur-2xl z-0" />
-          <div className="relative z-10 p-4 md:p-8 bg-white/50 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/40">
-            <img className="w-full h-auto rounded-2xl object-cover" src={hero.placeholderImage} alt="Hero" />
-          </div>
+
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-neutral-800">
+          {hero.title.line1}<br />
+          {hero.title.line2}<br />
+          <span className="text-cyan-700">{hero.title.line3}</span>
+        </h1>
+
+        <p className="text-xl text-stone-500 font-medium max-w-lg leading-relaxed">
+          {hero.description}
+        </p>
+
+        <button className="mt-4 px-8 py-4 bg-teal-700 hover:bg-teal-800 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300">
+          {hero.buttonText}
+        </button>
+
+      </div>
+
+      <div className="flex-1 w-full max-w-xl relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-800/10 to-cyan-700/20 rounded-full blur-2xl z-0" />
+        <div className="relative z-10 p-4 md:p-8 bg-white/50 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/40">
+          <img
+            className="w-full h-auto rounded-2xl object-cover"
+            src={hero.placeholderImage}
+            alt="Hero"
+          />
         </div>
-      </section>
+      </div>
+
+    </section>
 
       {/* AI Engagement Section */}
       <section className="w-full bg-white/50 backdrop-blur-sm py-20 px-6">

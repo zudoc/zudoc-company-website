@@ -13,7 +13,12 @@ function Patient() {
       <div className="self-stretch rounded-[32px] flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0">
         <div className="flex flex-col justify-start items-center lg:items-start gap-6">
           <div className="flex flex-col justify-start items-start">
-            <div className="w-full max-w-[456px] text-center lg:text-left"><span className="text-cyan-700 text-3xl md:text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[36px] md:leading-[50px] lg:leading-[60px]">{hero.titleLines[0].text}<br/></span><span className="text-neutral-800 text-3xl md:text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[36px] md:leading-[50px] lg:leading-[60px]">{hero.titleLines[1].text}<br/></span><span className="text-cyan-700 text-3xl md:text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[36px] md:leading-[50px] lg:leading-[60px]">{hero.titleLines[2].text}</span></div>
+            <div className="w-full max-w-[456px] text-center lg:text-left">
+              {/* Changed text-4xl to text-5xl and leading-[48px] to leading-[56px] */}
+              <span className="text-cyan-700 text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[56px] lg:leading-[60px]">{hero.titleLines[0].text}<br/></span>
+              <span className="text-neutral-800 text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[56px] lg:leading-[60px]">{hero.titleLines[1].text}<br/></span>
+              <span className="text-cyan-700 text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-[56px] lg:leading-[60px]">{hero.titleLines[2].text}</span>
+            </div>
           </div>
           <div className="w-full max-w-md flex flex-col justify-start items-start">
             <div className="text-center lg:text-left text-stone-500 text-base md:text-xl font-medium font-['Manrope'] leading-6 md:leading-7 mt-2">{hero.description}</div>
@@ -24,12 +29,16 @@ function Patient() {
             </button>
           </div>
         </div>
-        <div className="w-full lg:w-[576px] h-64 md:h-96 relative">
-          <img className="w-full lg:w-[721.45px] h-64 md:h-96 left-0 lg:left-[-120px] top-[10px] absolute object-contain" src={hero.placeholderImage} alt="Hero illustration" />
-        </div>
+        <div className="w-full lg:w-[576px] h-64 md:h-96 flex justify-start">
+        <img
+          className="w-full md:w-auto h-64 md:h-96 object-contain"
+          src={hero.placeholderImage}
+          alt="Hero illustration"
+        />
+      </div>
       </div>
     </div>
-  </div>
+</div>
   <div className="w-full max-w-[1440px] px-4 md:px-10 lg:px-20 py-10 lg:py-20 flex flex-col justify-center items-center gap-8">
     <div className="self-stretch flex flex-col justify-center items-center gap-2">
       <div className="self-stretch flex flex-col justify-center items-center gap-1">
@@ -743,268 +752,194 @@ function Patient() {
       </div>
     </div>
     <div className="w-full max-w-[1280px] flex flex-col lg:flex-row justify-start items-stretch gap-6 lg:gap-20">
-      <div className="w-full lg:w-[860px] p-4 md:p-6 bg-white rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-6">
-        <div className="self-stretch flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="inline-flex flex-col justify-start items-start gap-1">
-            <div className="self-stretch flex flex-col justify-start items-start">
-              <div className="justify-center text-slate-900 text-xl md:text-2xl font-bold font-['Manrope'] leading-8">All Appointments</div>
-            </div>
-            <div className="self-stretch flex flex-col justify-start items-start">
-              <div className="justify-center text-slate-500 text-sm font-normal font-['Manrope'] leading-5">One calendar. Every clinic.</div>
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row justify-start items-stretch sm:items-start gap-3">
-            <div className="w-full sm:w-auto px-6 py-3 bg-teal-600 rounded-xl flex justify-center items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-              <div className="text-center justify-center text-white text-sm font-bold font-['Manrope'] leading-5">Book Appointment</div>
-            </div>
-            <div className="w-full sm:w-auto px-6 py-3 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-center items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-              <div className="text-center justify-center text-slate-600 text-sm font-bold font-['Manrope'] leading-5">View Records</div>
-            </div>
-          </div>
+  {/* Left Column */}
+  <div className="w-full lg:w-[860px] p-4 md:p-6 bg-white rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-6">
+    
+    {/* Header & Buttons */}
+    <div className="self-stretch flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div className="inline-flex flex-col justify-start items-start gap-1"></div>
+      <div className="flex flex-col w-full sm:w-auto sm:flex-row justify-start items-stretch sm:items-start gap-3">
+        <div className="w-full sm:w-auto px-6 py-3 bg-teal-600 rounded-xl flex justify-center items-center gap-2 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+          <div className="text-center justify-center text-white text-sm font-bold font-['Manrope'] leading-5">Book Appointment</div>
         </div>
-        <div className="self-stretch p-1 bg-gray-200 rounded-2xl inline-flex justify-center items-start gap-1">
-          <div className="flex-1 px-4 py-3 bg-white rounded-xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex justify-center items-center gap-2">
-            <div className="inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-slate-900 text-sm font-bold font-['Manrope'] leading-5">Today</div>
-            </div>
-            <div className="px-2 py-0.5 bg-cyan-700 rounded-full inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-white text-xs font-bold font-['Manrope'] leading-4">2</div>
-            </div>
-          </div>
-          <div className="flex-1 px-4 py-3 rounded-xl flex justify-center items-center gap-2">
-            <div className="inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-slate-500 text-sm font-bold font-['Manrope'] leading-5">Upcoming</div>
-            </div>
-            <div className="px-2 py-0.5 bg-white rounded-full inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-slate-500 text-xs font-bold font-['Manrope'] leading-4">5</div>
-            </div>
-          </div>
-          <div className="flex-1 px-4 py-3 rounded-xl flex justify-center items-center gap-2">
-            <div className="inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-slate-500 text-sm font-bold font-['Manrope'] leading-5">Completed</div>
-            </div>
-            <div className="px-2 py-0.5 bg-white rounded-full inline-flex flex-col justify-start items-center">
-              <div className="text-center justify-center text-slate-500 text-xs font-bold font-['Manrope'] leading-4">12</div>
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch flex flex-col justify-start items-start gap-4">
-          <div className="self-stretch p-4 md:p-6 bg-white/0 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-between items-center">
-            <div className="flex justify-start items-center gap-4">
-              <div className="w-14 h-14 bg-slate-200 rounded-xl inline-flex flex-col justify-center items-start overflow-hidden">
-                <img className="self-stretch flex-1 relative" src={patientContent.allAppointments.visits[0].image} />
-              </div>
-              <div className="inline-flex flex-col justify-start items-start">
-                <div className="self-stretch flex flex-col justify-start items-start">
-                  <div className="justify-center text-zinc-800 text-base font-bold font-['Manrope'] leading-6">Dr. Anjali</div>
-                </div>
-                <div className="self-stretch flex flex-col justify-start items-start">
-                  <div className="justify-center text-slate-500 text-sm font-medium font-['Manrope'] leading-5">Feb 13 • 10:30 AM</div>
-                </div>
-                <div className="self-stretch pt-1 inline-flex justify-start items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                  <div className="justify-center text-teal-600 text-xs font-bold font-['Manrope'] leading-4">Clinic Visit</div>
-                </div>
-              </div>
-            </div>
-            <div className="inline-flex flex-col justify-start items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-          </div>
-          <div className="self-stretch p-4 md:p-6 bg-white/0 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-between items-center">
-            <div className="flex justify-start items-center gap-4">
-              <div className="w-14 h-14 bg-slate-200 rounded-xl inline-flex flex-col justify-center items-start overflow-hidden">
-                <img className="self-stretch flex-1 relative" src={patientContent.allAppointments.visits[1].image} />
-              </div>
-              <div className="inline-flex flex-col justify-start items-start">
-                <div className="self-stretch flex flex-col justify-start items-start">
-                  <div className="justify-center text-zinc-800 text-base font-bold font-['Manrope'] leading-6">Dr. Sharma</div>
-                </div>
-                <div className="self-stretch flex flex-col justify-start items-start">
-                  <div className="justify-center text-slate-500 text-sm font-medium font-['Manrope'] leading-5">Feb 15 • 6:00 PM</div>
-                </div>
-                <div className="self-stretch pt-1 inline-flex justify-start items-center gap-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
-                  <div className="justify-center text-blue-500 text-xs font-bold font-['Manrope'] leading-4">Online Consultation</div>
-                </div>
-              </div>
-            </div>
-            <div className="inline-flex flex-col justify-start items-start">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch flex-1 px-3 py-2 bg-slate-100 rounded-3xl outline outline-1 outline-offset-[-1px] outline-slate-200/50 inline-flex justify-start items-start gap-3">
-          <div className="w-10 h-10 bg-teal-600/10 rounded-full flex justify-center items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          </div>
-          <div className="flex-1 inline-flex flex-col justify-start items-start">
-            <div className="self-stretch flex flex-col justify-start items-start">
-              <div className="justify-center text-slate-800 text-sm font-bold font-['Manrope'] leading-5">Your Privacy Matters</div>
-            </div>
-            <div className="self-stretch justify-center text-slate-500 text-xs font-medium font-['Manrope'] leading-4">We keep your health information private and fully protected.</div>
-          </div>
-        </div>
-      </div>
-      <div className="flex-1 inline-flex flex-col justify-start items-start gap-6">
-        <div className="self-stretch flex flex-col justify-start items-start gap-6">
-          <div className="self-stretch p-4 md:p-6 bg-white rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-3.5">
-            <div className="self-stretch pr-[0.01px] inline-flex justify-between items-center">
-              <div className="inline-flex flex-col justify-start items-start">
-                <div className="justify-center text-slate-900 text-base font-bold font-['Manrope'] leading-6">March 2026</div>
-              </div>
-              <div className="w-8 h-8 bg-slate-100 rounded-full flex justify-center items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </div>
-            </div>
-            <div className="self-stretch grid grid-cols-7 gap-y-2 justify-items-center w-full">
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">S</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-2 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">M</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">T</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-2.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">W</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">T</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">F</div>
-              </div>
-              <div className="self-stretch inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-3.5 text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">S</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">1</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">2</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">3</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-2 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">4</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">5</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-2 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">6</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">7</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-1.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">8</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-2 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">9</div>
-              </div>
-              <div className="self-stretch py-2 bg-teal-600 rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-white text-xs font-bold font-['Manrope'] leading-4">13</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">10</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-2.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">11</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">12</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">15</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">14</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">16</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">26</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">27</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">28</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">29</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">30</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-2.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">17</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">18</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">19</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">20</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">21</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">22</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">23</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">24</div>
-              </div>
-              <div className="self-stretch py-2 inline-flex flex-col justify-start items-center">
-                <div className="w-3.5 h-4 text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">25</div>
-              </div>
-            </div>
-          </div>
-          <div className="self-stretch flex flex-col justify-start items-start gap-3">
-            <div className="self-stretch flex flex-col justify-start items-start">
-              <div className="self-stretch justify-center text-slate-400 text-xs font-bold font-['Manrope'] uppercase leading-4 tracking-wide">Next Appointment</div>
-            </div>
-            <div className="self-stretch p-4 bg-teal-600/5 rounded-2xl outline outline-1 outline-offset-[-1px] outline-teal-600/20 flex flex-col justify-start items-start gap-4">
-              <div className="self-stretch inline-flex justify-start items-center gap-3">
-                <div className="w-8 h-8 bg-teal-600 rounded-full flex justify-center items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
-                </div>
-                <div className="inline-flex flex-col justify-start items-start">
-                  <div className="self-stretch flex flex-col justify-start items-start">
-                    <div className="justify-center text-zinc-800 text-sm font-bold font-['Manrope'] leading-5">Dr. Anjali Deshmukh</div>
-                  </div>
-                  <div className="self-stretch flex flex-col justify-start items-start">
-                    <div className="self-stretch justify-center text-slate-500 text-xs font-medium font-['Manrope'] leading-4">Feb 13 • 10:30 AM</div>
-                  </div>
-                </div>
-              </div>
-              <div className="self-stretch inline-flex justify-start items-start gap-2">
-                <div className="w-28 py-2 bg-teal-600 rounded-xl flex justify-center items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
-                  <div className="w-6 h-4 text-center justify-center text-white text-xs font-bold font-['Manrope'] leading-4">Join</div>
-                </div>
-                <div className="w-28 py-2 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 inline-flex flex-col justify-center items-center">
-                  <div className="w-16 h-4 text-center justify-center text-slate-600 text-xs font-bold font-['Manrope'] leading-4">Reschedule</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="w-full sm:w-auto px-6 py-3 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-center items-center gap-2 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          <div className="text-center justify-center text-slate-600 text-sm font-bold font-['Manrope'] leading-5">View Records</div>
         </div>
       </div>
     </div>
+
+    {/* Segmented Tabs (Fixed for mobile scaling) */}
+    <div className="self-stretch p-1 bg-gray-200 rounded-2xl flex w-full justify-between items-center gap-1">
+      <div className="flex-1 px-2 sm:px-4 py-2 sm:py-3 bg-white rounded-xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2">
+        <div className="inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-slate-900 text-xs sm:text-sm font-bold font-['Manrope'] leading-5">Today</div>
+        </div>
+        <div className="px-2 py-0.5 bg-cyan-700 rounded-full inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-white text-[10px] sm:text-xs font-bold font-['Manrope'] leading-4">2</div>
+        </div>
+      </div>
+      <div className="flex-1 px-2 sm:px-4 py-2 sm:py-3 rounded-xl flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2">
+        <div className="inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-slate-500 text-xs sm:text-sm font-bold font-['Manrope'] leading-5">Upcoming</div>
+        </div>
+        <div className="px-2 py-0.5 bg-white rounded-full inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-slate-500 text-[10px] sm:text-xs font-bold font-['Manrope'] leading-4">5</div>
+        </div>
+      </div>
+      <div className="flex-1 px-2 sm:px-4 py-2 sm:py-3 rounded-xl flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2">
+        <div className="inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-slate-500 text-xs sm:text-sm font-bold font-['Manrope'] leading-5">Completed</div>
+        </div>
+        <div className="px-2 py-0.5 bg-white rounded-full inline-flex flex-col justify-start items-center">
+          <div className="text-center justify-center text-slate-500 text-[10px] sm:text-xs font-bold font-['Manrope'] leading-4">12</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Appointment List */}
+    <div className="self-stretch flex flex-col justify-start items-start gap-4">
+      <div className="self-stretch p-4 md:p-6 bg-white/0 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-between items-center">
+        <div className="flex justify-start items-center gap-3 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-200 rounded-xl inline-flex flex-col justify-center items-start overflow-hidden shrink-0">
+            <img className="self-stretch flex-1 relative object-cover" src={patientContent.allAppointments.visits[0].image} alt="Doctor" />
+          </div>
+          <div className="inline-flex flex-col justify-start items-start">
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <div className="justify-center text-zinc-800 text-sm sm:text-base font-bold font-['Manrope'] leading-6">Dr. Anjali</div>
+            </div>
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <div className="justify-center text-slate-500 text-xs sm:text-sm font-medium font-['Manrope'] leading-5">Feb 13 • 10:30 AM</div>
+            </div>
+            <div className="self-stretch pt-1 inline-flex justify-start items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              <div className="justify-center text-teal-600 text-[10px] sm:text-xs font-bold font-['Manrope'] leading-4">Clinic Visit</div>
+            </div>
+          </div>
+        </div>
+        <div className="inline-flex flex-col justify-start items-start shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      
+      <div className="self-stretch p-4 md:p-6 bg-white/0 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-between items-center">
+        <div className="flex justify-start items-center gap-3 sm:gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-200 rounded-xl inline-flex flex-col justify-center items-start overflow-hidden shrink-0">
+            <img className="self-stretch flex-1 relative object-cover" src={patientContent.allAppointments.visits[1].image} alt="Doctor" />
+          </div>
+          <div className="inline-flex flex-col justify-start items-start">
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <div className="justify-center text-zinc-800 text-sm sm:text-base font-bold font-['Manrope'] leading-6">Dr. Sharma</div>
+            </div>
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <div className="justify-center text-slate-500 text-xs sm:text-sm font-medium font-['Manrope'] leading-5">Feb 15 • 6:00 PM</div>
+            </div>
+            <div className="self-stretch pt-1 inline-flex justify-start items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
+              <div className="justify-center text-blue-500 text-[10px] sm:text-xs font-bold font-['Manrope'] leading-4">Online Consultation</div>
+            </div>
+          </div>
+        </div>
+        <div className="inline-flex flex-col justify-start items-start shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+
+    {/* Privacy Banner */}
+    <div className="self-stretch px-3 py-3 bg-slate-100 rounded-3xl outline outline-1 outline-offset-[-1px] outline-slate-200/50 flex flex-row justify-start items-center gap-3">
+      <div className="w-10 h-10 bg-teal-600/10 rounded-full flex justify-center items-center shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div className="flex-1 flex flex-col justify-center items-start">
+        <div className="self-stretch flex flex-col justify-start items-start">
+          <div className="justify-center text-slate-800 text-sm font-bold font-['Manrope'] leading-5">Your Privacy Matters</div>
+        </div>
+        <div className="self-stretch justify-center text-slate-500 text-xs font-medium font-['Manrope'] leading-4">We keep your health information private and fully protected.</div>
+      </div>
+    </div>
+  </div>
+
+  {/* Right Column (Fixed inline-flex issue) */}
+  <div className="flex-1 flex w-full flex-col justify-start items-start gap-6">
+    <div className="self-stretch flex flex-col justify-start items-start gap-6">
+      
+      {/* Calendar Card */}
+      <div className="self-stretch p-4 md:p-6 bg-white rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-3.5">
+        <div className="self-stretch pr-[0.01px] inline-flex justify-between items-center">
+          <div className="inline-flex flex-col justify-start items-start">
+            <div className="justify-center text-slate-900 text-base font-bold font-['Manrope'] leading-6">March 2026</div>
+          </div>
+          <div className="w-8 h-8 bg-slate-100 rounded-full flex justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-slate-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+        <div className="self-stretch grid grid-cols-7 gap-y-2 justify-items-center w-full">
+          {/* Calendar Headers */}
+          {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
+            <div key={`header-${i}`} className="self-stretch flex flex-col justify-start items-center">
+              <div className="text-center justify-center text-slate-400 text-[10px] font-bold font-['Manrope'] leading-4">{day}</div>
+            </div>
+          ))}
+          
+          {/* Calendar Days (1-12) */}
+          {[1,2,3,4,5,6,7,8,9,10,11,12].map((num) => (
+             <div key={`day-${num}`} className="self-stretch py-2 flex flex-col justify-start items-center">
+               <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">{num}</div>
+             </div>
+          ))}
+          
+          {/* Highlighted Day (13) */}
+          <div className="self-stretch py-2 bg-teal-600 rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex flex-col justify-start items-center">
+            <div className="text-center justify-center text-white text-xs font-bold font-['Manrope'] leading-4">13</div>
+          </div>
+
+          {/* Rest of the Days */}
+          {[14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].map((num) => (
+             <div key={`day-${num}`} className="self-stretch py-2 flex flex-col justify-start items-center">
+               <div className="text-center justify-center text-slate-900 text-xs font-normal font-['Manrope'] leading-4">{num}</div>
+             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Next Appointment Card */}
+      <div className="self-stretch flex flex-col justify-start items-start gap-3">
+        <div className="self-stretch flex flex-col justify-start items-start">
+          <div className="self-stretch justify-center text-slate-400 text-xs font-bold font-['Manrope'] uppercase leading-4 tracking-wide">Next Appointment</div>
+        </div>
+        <div className="self-stretch p-4 bg-teal-600/5 rounded-2xl outline outline-1 outline-offset-[-1px] outline-teal-600/20 flex flex-col justify-start items-start gap-4">
+          <div className="self-stretch flex justify-start items-center gap-3">
+            <div className="w-8 h-8 bg-teal-600 rounded-full flex justify-center items-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
+            </div>
+            <div className="flex flex-col justify-start items-start">
+              <div className="self-stretch flex flex-col justify-start items-start">
+                <div className="justify-center text-zinc-800 text-sm font-bold font-['Manrope'] leading-5">Dr. Anjali Deshmukh</div>
+              </div>
+              <div className="self-stretch flex flex-col justify-start items-start">
+                <div className="self-stretch justify-center text-slate-500 text-xs font-medium font-['Manrope'] leading-4">Feb 13 • 10:30 AM</div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Action Buttons (Fixed layout for mobile) */}
+          <div className="self-stretch flex w-full justify-start items-start gap-2">
+            <div className="flex-1 py-2 bg-teal-600 rounded-xl flex justify-center items-center gap-2 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 10l5-3v10l-5-3"/><rect x="4" y="6" width="11" height="12" rx="2"/></svg>
+              <div className="text-center justify-center text-white text-xs font-bold font-['Manrope'] leading-4">Join</div>
+            </div>
+            <div className="flex-1 py-2 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200 flex justify-center items-center cursor-pointer">
+              <div className="text-center justify-center text-slate-600 text-xs font-bold font-['Manrope'] leading-4">Reschedule</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
   </div>
   <div className="w-full max-w-[1536px] px-4 md:px-10 lg:px-20 py-10 lg:py-20 inline-flex justify-start items-center gap-6 overflow-hidden">
     <div className="w-full max-w-[1280px] flex flex-col lg:flex-row justify-start items-stretch gap-8 lg:gap-20">

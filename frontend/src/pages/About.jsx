@@ -8,32 +8,35 @@ function About() {
       <div className="w-full max-w-[1440px] px-6 lg:px-20 pt-10 flex flex-col justify-center items-center gap-8 overflow-hidden relative">
         <div className="w-full flex lg:flex-row flex-col justify-center items-center lg:items-start gap-7 min-h-[590px]">
           <div className="w-full lg:w-[648px] flex flex-col justify-start z-10">
-            <div className="w-full flex flex-col justify-start items-start gap-6">
-              <div className="px-4 py-1.5 bg-teal-600/10 rounded-full flex justify-start items-start">
-                <div className="justify-center text-teal-600 text-xs font-bold uppercase leading-4 tracking-wider">{aboutContent.hero.badge}</div>
-              </div>
-              <div className="w-full flex flex-col justify-start items-start">
-                <div className="justify-start text-left">
-                  <span className="text-zinc-900 text-4xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleLine1}<br/></span>
-                  <span className="text-cyan-700 text-4xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleHighlight}</span>
-                  <span className="text-zinc-900 text-4xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]"> {aboutContent.hero.titleLine2}</span>
-                </div>
-              </div>
-              <div className="w-full lg:max-w-[512px] pt-1.5 flex flex-col justify-start items-start">
-                <div className="justify-start text-stone-500 text-lg lg:text-xl font-medium leading-7 whitespace-pre-line">
-                  {aboutContent.hero.subtitle}
-                </div>
-              </div>
-              <div className="w-full pt-4 flex flex-col sm:flex-row justify-start items-start gap-4">
-                <div className="px-10 py-4 bg-teal-700 rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] flex justify-center items-center cursor-pointer hover:bg-teal-800 transition-colors">
-                  <div className="justify-start text-white text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.primaryButton}</div>
-                </div>
-                <div className="px-10 py-4 bg-white rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] outline outline-[1.63px] outline-teal-700 flex justify-center items-center cursor-pointer hover:bg-slate-50 transition-colors">
-                  <div className="justify-start text-teal-700 text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.secondaryButton}</div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="w-full flex flex-col justify-start items-center lg:items-start gap-6 lg:gap-8">
+    <div className="px-4 py-2 bg-teal-600/10 rounded-full flex justify-center items-center lg:justify-start lg:items-start">
+      <div className="text-center lg:text-left text-teal-600 text-sm font-bold uppercase leading-5 tracking-wider">{aboutContent.hero.badge}</div>
+    </div>
+    
+    <div className="w-full flex flex-col justify-start items-center lg:items-start">
+      <div className="text-center lg:text-left">
+        <span className="text-zinc-900 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleLine1}<br/></span>
+        <span className="text-cyan-700 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleHighlight}</span>
+        <span className="text-zinc-900 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]"> {aboutContent.hero.titleLine2}</span>
+      </div>
+    </div>
+    
+    <div className="w-full lg:max-w-[512px] pt-1.5 flex flex-col justify-start items-center lg:items-start">
+      <div className="text-center lg:text-left text-stone-500 text-xl lg:text-2xl font-medium leading-8 whitespace-pre-line">
+        {aboutContent.hero.subtitle}
+      </div>
+    </div>
+    
+    <div className="w-full pt-4 flex flex-col sm:flex-row justify-center lg:justify-start items-center lg:items-start gap-4">
+      <div className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-teal-700 rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] flex justify-center items-center cursor-pointer hover:bg-teal-800 transition-colors">
+        <div className="text-center lg:text-left text-white text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.primaryButton}</div>
+      </div>
+      <div className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-white rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] outline outline-[1.63px] outline-teal-700 flex justify-center items-center cursor-pointer hover:bg-slate-50 transition-colors">
+        <div className="text-center lg:text-left text-teal-700 text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.secondaryButton}</div>
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Decorative shapes background (Hidden on small screens for better reading) */}
           <div className="hidden lg:block w-[590px] h-[590px] absolute right-[-100px] top-0 rounded-full outline outline-[3px] outline-cyan-700 opacity-20 pointer-events-none" />
