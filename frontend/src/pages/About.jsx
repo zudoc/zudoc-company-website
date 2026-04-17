@@ -68,71 +68,181 @@ function About() {
       </div>
 
       {/* Offerings Section */}
-      <div className="w-full p-6 lg:p-20 flex flex-col justify-center items-center gap-8">
-        <div className="w-full max-w-[1280px] flex flex-col justify-center items-center gap-2 text-center">
-          <div className="text-neutral-900 text-4xl lg:text-5xl font-bold leading-tight">{aboutContent.offers.sectionTitle}</div>
-          <div className="text-stone-500 text-lg lg:text-xl font-medium leading-7 max-w-2xl">{aboutContent.offers.sectionSubtitle}</div>
+      <div className="self-stretch px-6 lg:px-20 py-16 lg:py-24 bg-[#F9FAFB] flex flex-col justify-center items-center gap-12 lg:gap-16">
+        <div className="w-full max-w-[1280px] flex flex-col justify-center items-center gap-4 text-center">
+          <h2 className="text-zinc-900 text-4xl lg:text-5xl font-bold font-['Manrope'] leading-tight">
+            {aboutContent.offers.sectionTitle}
+          </h2>
+          <p className="text-stone-500 text-lg lg:text-xl font-medium font-['Manrope'] leading-relaxed max-w-3xl">
+            {aboutContent.offers.sectionSubtitle}
+          </p>
         </div>
-        
-        <div className="w-full max-w-[1280px] grid grid-cols-1 md:grid-cols-2 gap-10">
-          {aboutContent.offers.items.map((offer, idx) => (
-            <div key={idx} className="bg-white/95 backdrop-blur-md rounded-[32px] p-8 lg:p-10 shadow-xl border border-gray-100 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
-              {/* Background Number */}
-              <div className="absolute top-4 right-8 text-[120px] font-black text-black/[0.03] leading-none pointer-events-none group-hover:text-black/[0.05] transition-colors">
-                {offer.number}
-              </div>
 
-              {/* Main Icon Container */}
-              <div className="w-14 h-14 bg-teal-50 rounded-2xl flex justify-center items-center mb-6 shadow-sm border border-teal-100">
-                 {offer.icon === 'user' && <svg className="w-7 h-7 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>}
-                 {offer.icon === 'plus' && <svg className="w-7 h-7 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>}
-                 {offer.icon === 'office' && <svg className="w-7 h-7 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m4 0h.01" /></svg>}
-                 {offer.icon === 'beaker' && <svg className="w-7 h-7 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" /></svg>}
-              </div>
+        <div className="w-full max-w-[1280px] grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {aboutContent.offers.items.map((offer, idx) => {
 
-              <div className="relative z-10">
-                <h3 className="text-zinc-900 text-2xl font-bold mb-2">
-                  {offer.target} 
-                  <span className="text-teal-700">{offer.highlight}</span>
-                </h3>
-                <p className="text-neutral-500 text-lg mb-8 max-w-md">{offer.description}</p>
-                
-                {/* Features with Icons */}
-                <div className="flex flex-col gap-4 mb-8">
-                  {offer.features.map((feature, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-3 group/feat">
-                      <div className="w-8 h-8 rounded-lg bg-teal-50 flex justify-center items-center shrink-0 group-hover/feat:bg-teal-100 transition-colors">
-                         {feature.icon === 'calendar' && <span className="text-teal-700 text-sm">📅</span>}
-                         {feature.icon === 'shield' && <span className="text-teal-700 text-sm">🛡️</span>}
-                         {feature.icon === 'refresh' && <span className="text-teal-700 text-sm">🔄</span>}
-                         {feature.icon === 'users' && <span className="text-teal-700 text-sm">👥</span>}
-                         {feature.icon === 'sparkles' && <span className="text-teal-700 text-sm">✨</span>}
-                         {feature.icon === 'document' && <span className="text-teal-700 text-sm">📄</span>}
-                         {feature.icon === 'search' && <span className="text-teal-700 text-sm">🔍</span>}
-                         {feature.icon === 'clock' && <span className="text-teal-700 text-sm">🕒</span>}
-                         {feature.icon === 'chart' && <span className="text-teal-700 text-sm">📊</span>}
-                         {feature.icon === 'cash' && <span className="text-teal-700 text-sm">💰</span>}
-                         {feature.icon === 'star' && <span className="text-teal-700 text-sm">⭐</span>}
-                         {feature.icon === 'collection' && <span className="text-teal-700 text-sm">📦</span>}
-                         {feature.icon === 'microscope' && <span className="text-teal-700 text-sm">🔬</span>}
-                         {feature.icon === 'mail' && <span className="text-teal-700 text-sm">✉️</span>}
+            const bgClass = idx === 0 
+              ? 'bg-white' 
+              : idx === 1 
+              ? 'bg-[#EEF7F7]' 
+              : idx === 2 
+              ? 'bg-white lg:bg-[#EEF7F7]' 
+              : 'bg-[#EEF7F7] lg:bg-white';
+
+            const outlineClass = idx === 0 
+              ? 'outline-emerald-50' 
+              : idx === 1 
+              ? 'outline-white' 
+              : idx === 2 
+              ? 'outline-emerald-50 lg:outline-white' 
+              : 'outline-white lg:outline-emerald-50';
+
+            return (
+              <div 
+                key={idx} 
+                className={`flex-1 p-8 lg:p-10 relative ${bgClass} rounded-[48px] shadow-lg outline outline-1 outline-offset-[-1px] ${outlineClass} flex flex-col justify-start items-start gap-6 transition-all duration-300 hover:shadow-xl group`}
+              >
+                {/* Background Number */}
+                <div className="right-10 top-6 absolute flex flex-col justify-start items-start pointer-events-none select-none">
+                  <div className="text-zinc-900/5 text-8xl lg:text-[100px] font-extrabold font-['Manrope'] leading-none">
+                    {offer.number}
+                  </div>
+                </div>
+
+                {/* Main Icon Container */}
+                <div className="w-16 h-16 bg-teal-700/10 rounded-2xl flex justify-center items-center relative z-10">
+                  {offer.icon === 'user' && (
+                    <svg className="w-8 h-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  )}
+                  {offer.icon === 'plus' && (
+                    <svg className="w-8 h-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  )}
+                  {offer.icon === 'office' && (
+                    <svg className="w-8 h-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m4 0h.01" />
+                    </svg>
+                  )}
+                  {offer.icon === 'beaker' && (
+                    <svg className="w-8 h-8 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
+                    </svg>
+                  )}
+                </div>
+
+                {/* Content Area */}
+                <div className="self-stretch flex flex-col justify-start items-start gap-2 relative z-10">
+                  <h3 className="text-zinc-900 text-2xl lg:text-3xl font-bold font-['Manrope'] leading-tight">
+                    {offer.target}
+                    <span className="text-teal-700 ml-1">{offer.highlight}</span>
+                  </h3>
+                  <p className="self-stretch text-neutral-400 text-base lg:text-lg font-medium font-['Manrope'] leading-relaxed max-w-[440px]">
+                    {offer.description}
+                  </p>
+                </div>
+
+                {/* Features List */}
+                <div className="flex flex-col justify-start items-start gap-4 relative z-10 mt-2">
+                  {offer.features.map((feat, fIdx) => (
+                    <div key={fIdx} className="inline-flex justify-start items-center gap-3 group/feat">
+                      <div className="w-6 h-6 flex justify-center items-center">
+                        {feat.icon === 'calendar' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'shield' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'refresh' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          </svg>
+                        )}
+                        {feat.icon === 'users' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'sparkles' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'document' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'search' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'clock' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'chart' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'cash' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'star' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'collection' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                          </svg>
+                        )}
+                        {feat.icon === 'microscope' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                        )}
+                        {feat.icon === 'mail' && (
+                          <svg className="w-5 h-5 text-teal-700/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        )}
                       </div>
-                      <span className="text-stone-600 text-base font-medium">{feature.text}</span>
+                      <span className="text-stone-500 text-lg font-medium font-['Manrope'] leading-6 group-hover/feat:text-teal-700 transition-colors">
+                        {feat.text}
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-gray-100">
+                {/* Tags Section */}
+                <div className="self-stretch flex flex-wrap justify-start items-center gap-2 mt-auto pt-6 border-t border-gray-100/50 relative z-10">
                   {offer.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="px-4 py-1.5 bg-teal-50/50 text-teal-800 text-xs font-bold rounded-full border border-teal-100/50">
-                      {tag}
-                    </span>
+                    <div 
+                      key={tIdx} 
+                      className="px-4 py-1.5 bg-teal-500/10 rounded-full border border-teal-500/5 group-hover:bg-teal-500/15 transition-colors"
+                    >
+                      <span className="text-teal-700 text-sm font-bold font-['Manrope'] leading-tight">
+                        {tag}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

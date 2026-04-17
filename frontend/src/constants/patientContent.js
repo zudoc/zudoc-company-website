@@ -1,11 +1,16 @@
 import patentHeroImage from '../assets/patientPage/patentHeroImage.png';
 import mobileBG from '../assets/patientPage/mobileBG.png';
-import HeadImage from '../assets/patientPage/Head.jpg';
-import SpouseImage from '../assets/patientPage/Spouse.jpg';
-import ChildImage from '../assets/patientPage/Child.jpg';
-import PetImage from '../assets/patientPage/Pet.jpg';
-import DrAnjali from '../assets/patientPage/DrAnjali.jpg';
+import HeadImage from '../assets/patientPage/Head.png';
+import SpouseImage from '../assets/patientPage/Spouse.png';
+import ChildImage from '../assets/patientPage/Child.png';
+import PetImage from '../assets/patientPage/Pet.png';
+import DrAnjali from '../assets/patientPage/DrAnjali.png';
 import DrSharma from '../assets/patientPage/DrSharma.jpg';
+
+import wud1 from '../assets/patientPage/wud1.png';
+import wud2 from '../assets/patientPage/wud2.png';
+import wud3 from '../assets/patientPage/wud3.png';
+import wud4 from '../assets/patientPage/wud4.png';
 
 export const patientContent = {
   hero: {
@@ -14,7 +19,7 @@ export const patientContent = {
       { text: "Your Time.", color: "text-neutral-800" },
       { text: "Your Control.", color: "text-cyan-700" }
     ],
-    description: "Manage your family’s healthcare journey with clarity, control, and confidence. A premium editorial approach to medical records and consultations.",
+    description: "Manage your family’s healthcare journey with clarity, control, and confidence. Experience a premium, editorial approach to medical records and consultations.",
     buttonText: "Get Started",
     placeholderImage: patentHeroImage
   },
@@ -24,7 +29,7 @@ export const patientContent = {
     setupAccountTitle: "Set Up Your Account",
     setupAccountSub: "It only takes a few seconds to get started",
     ecosystemTitle: "Your Family Ecosystem",
-    ecosystemSub: "Include your parents, partner, kids—and even your pets 🐾",
+    ecosystemSub: "Include your parents, partner, kids—and even your pets",
     members: [
       { id: "head", role: "Head", name: "Ramesh", color: "bg-cyan-700/20", image: HeadImage },
       { id: "spouse", role: "Spouse", name: "Sita", color: "bg-blue-500/20", image: SpouseImage },
@@ -53,7 +58,7 @@ export const patientContent = {
     }
   },
   healthRecords: {
-    title: "Track All Records in One Place",
+    title: "Access your family’s health records anytime",
     subtitle: "See your family’s health clearly, anytime.",
     overview: {
       title: "Family Overview",
@@ -96,34 +101,56 @@ export const patientContent = {
       subtitle: "PDF, JPG, PNG (Max 10MB)",
       progressText: "Uploading... 70%"
     },
-    whyUpload: {
-      title: "Why upload documents?",
-      subtitle: "Smart, ring, say and seo tools.",
-      reasons: [
-        { title: "Auto Organized", desc: "Sort by type & date automatically", color: "bg-teal-50" },
-        { title: "Easy Sharing", desc: "Share instantly with doctors", color: "bg-blue-50" },
-        { title: "Secure Storage", desc: "Encrypted and safe access", color: "bg-indigo-50" }
-      ]
+    title: "Why upload documents?",
+    subtitle: "Access and share your health data anytime, anywhere.",
+    reasons: [
+      { title: "Smart health insights", image: wud1 },
+      { title: "Faster consultations", image: wud2 },
+      { title: "Organized medical records", image: wud3 },
+      { title: "Easy sharing", image: wud4 }
+    ],
+    uploadArea: {
+      title: "Drag & drop or click to upload your reports",
+      subtitle: "PDF, JPG, PNG (Max 10MB)",
+      progressText: "Uploading... 70%"
     }
   },
   allAppointments: {
-    title: "All Appointments",
+    title: "One calendar for all your appointments",
     subtitle: "One Calendar. Every Clinic",
     cardTitle: "All Appointments",
     cardSubtitle: "One calendar. Every clinic.",
-    filters: [
-      { label: "Today", count: 2, active: true },
-      { label: "Upcoming", count: 5, active: false },
-      { label: "Completed", count: 12, active: false }
+    tabs: [
+      { id: "today", label: "Today", count: 2 },
+      { id: "upcoming", label: "Upcoming", count: 5 },
+      { id: "completed", label: "Completed", count: 12 }
     ],
-    visits: [
-      { doctor: "Dr. Anjali", date: "Feb 13 • 10:30 AM", type: "Clinic Visit", color: "text-teal-600", border: "outline-teal-600", image: DrAnjali },
-      { doctor: "Dr. Sharma", date: "Feb 15 • 6:00 PM", type: "Online Consultation", color: "text-blue-500", border: "outline-blue-500", image: DrSharma }
-    ],
-    nextAppointment: {
-      title: "Next Appointment",
-      doctor: "Dr. Anjali Deshmukh",
-      date: "Feb 13 • 10:30 AM"
+    privacyNote: {
+      title: "Your Privacy Matters",
+      description: "We keep your health information private and fully protected."
+    },
+    calendar: {
+      month: "March 2026",
+      nextAppointment: {
+        title: "Next Appointment",
+        doctor: "Dr. Anjali Deshmukh",
+        time: "Feb 13 • 10:30 AM",
+        status: "Clinically Confirmed"
+      }
+    },
+    visits: {
+      today: [
+        { doctor: "Dr. Anjali", date: "Feb 13 • 10:30 AM", type: "Clinic Visit", status: "Active", image: DrAnjali },
+        { doctor: "Dr. Sharma", date: "Feb 13 • 6:00 PM", type: "Online Consultation", status: "Active", image: DrSharma }
+      ],
+      upcoming: [
+        { doctor: "Dr. Raj Mehta", date: "Feb 22 • 11:00 AM", type: "Clinic Visit", status: "Scheduled", image: "" },
+        { doctor: "City Diagnostic Lab", date: "Feb 24 • 9:00 AM", type: "Lab Appointment", status: "Scheduled", image: "" }
+      ],
+      completed: [
+        { doctor: "Dr. Sharma", date: "Feb 15 • 6:00 PM", type: "Online Consultation", status: "Completed", image: DrSharma },
+        { doctor: "City Diagnostic Lab", date: "Feb 16 • 9:00 AM", type: "Lab Appointment", status: "Completed", image: "" }
+      ]
     }
   },
   reminders: {
