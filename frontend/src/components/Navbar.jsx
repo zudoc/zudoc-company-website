@@ -21,14 +21,14 @@ function Navbar({ currentPage, setCurrentPage }) {
           className="flex items-center gap-3 cursor-pointer group" 
           onClick={() => handlePageChange('home')}
         >
-          <img src={zudocIcon} alt="Zudoc" className="w-12 h-12 transition-transform group-hover:scale-110" />
-          <div className="justify-start text-cyan-700 text-3xl font-extrabold leading-10">Zudoc</div>
+          <img src={zudocIcon} alt="zudoc" className="w-12 h-12 transition-transform group-hover:scale-110" />
+          <div className="justify-start text-primary text-3xl leading-10 company-name">zudoc</div>
         </div>
         
         {/* Mobile Menu Toggle Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-cyan-700 transition-transform active:scale-95"
+          className="md:hidden text-primary transition-transform active:scale-95"
           aria-label="Toggle mobile menu"
         >
           {isMobileMenuOpen ? (
@@ -49,8 +49,8 @@ function Navbar({ currentPage, setCurrentPage }) {
           onClick={() => handlePageChange('home')}
           className={`px-5 py-2.5 rounded-xl font-bold transition-all active:scale-95 ${
             currentPage === 'home' 
-            ? 'bg-cyan-700 text-white shadow-lg shadow-cyan-700/30' 
-            : 'text-cyan-700 hover:bg-cyan-50'
+            ? 'bg-primary text-white shadow-lg shadow-primary/30' 
+            : 'text-primary hover:bg-primary/5'
           }`}
         >
           Home
@@ -60,8 +60,8 @@ function Navbar({ currentPage, setCurrentPage }) {
           onClick={() => handlePageChange('about')}
           className={`px-5 py-2.5 rounded-xl font-bold transition-all active:scale-95 ${
             currentPage === 'about' 
-            ? 'bg-cyan-700 text-white shadow-lg shadow-cyan-700/30' 
-            : 'text-cyan-700 hover:bg-cyan-50'
+            ? 'bg-primary text-white shadow-lg shadow-primary/30' 
+            : 'text-primary hover:bg-primary/5'
           }`}
         >
           About
@@ -69,15 +69,15 @@ function Navbar({ currentPage, setCurrentPage }) {
 
         <div className="relative flex items-center gap-1 group cursor-pointer px-4 py-2.5 rounded-xl transition-all duration-300">
           <span className={`font-bold transition-colors ${
-            isPlatformActive ? 'text-cyan-700' : 'text-cyan-700/70 group-hover:text-cyan-700'
+            isPlatformActive ? 'text-primary' : 'text-primary/70 group-hover:text-primary'
           }`}>Platforms</span>
-          <svg className={`w-4 h-4 transition-all duration-300 ${isPlatformActive ? 'text-cyan-700' : 'text-cyan-700/70 group-hover:text-cyan-700'} group-hover:rotate-180`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className={`w-4 h-4 transition-all duration-300 ${isPlatformActive ? 'text-primary' : 'text-primary/70 group-hover:text-primary'} group-hover:rotate-180`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
           
           {/* Active Highlight Underline for Platforms */}
           {isPlatformActive && (
-            <div className="absolute bottom-1 left-4 right-8 h-0.5 bg-cyan-700 rounded-full animate-in fade-in slide-in-from-left-2 duration-300" />
+            <div className="absolute bottom-1 left-4 right-8 h-0.5 bg-primary rounded-full animate-in fade-in slide-in-from-left-2 duration-300" />
           )}
           
           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-48 bg-white/95 backdrop-blur-md border border-gray-100 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50 pointer-events-none group-hover:pointer-events-auto overflow-hidden">
@@ -87,8 +87,8 @@ function Navbar({ currentPage, setCurrentPage }) {
                 onClick={() => handlePageChange(page)} 
                 className={`text-left px-5 py-3 text-sm font-bold transition-colors ${
                   currentPage === page 
-                  ? 'bg-cyan-700 text-white' 
-                  : 'text-cyan-700 hover:bg-cyan-50'
+                  ? 'bg-primary text-white' 
+                  : 'text-primary hover:bg-primary/5'
                 }`}
               >
                 {page.charAt(0).toUpperCase() + page.slice(1)}
@@ -105,8 +105,8 @@ function Navbar({ currentPage, setCurrentPage }) {
             onClick={() => handlePageChange('home')}
             className={`px-5 py-3 rounded-xl font-bold transition-all text-left w-full ${
               currentPage === 'home' 
-              ? 'bg-cyan-700 text-white shadow-md' 
-              : 'text-cyan-700 bg-cyan-50/50 hover:bg-cyan-100'
+              ? 'bg-primary text-white shadow-md' 
+              : 'text-primary bg-primary/5 hover:bg-primary/10'
             }`}
           >
             Home
@@ -116,21 +116,21 @@ function Navbar({ currentPage, setCurrentPage }) {
             onClick={() => handlePageChange('about')}
             className={`px-5 py-3 rounded-xl font-bold transition-all text-left w-full ${
               currentPage === 'about' 
-              ? 'bg-cyan-700 text-white shadow-md' 
-              : 'text-cyan-700 bg-cyan-50/50 hover:bg-cyan-100'
+              ? 'bg-primary text-white shadow-md' 
+              : 'text-primary bg-primary/5 hover:bg-primary/10'
             }`}
           >
             About
           </button>
           
           <div className={`flex flex-col rounded-xl overflow-hidden border transition-all duration-300 ${
-            isPlatformActive ? 'bg-cyan-50/80 border-cyan-200' : 'bg-cyan-50/30 border-cyan-100/50'
+            isPlatformActive ? 'bg-primary/5 border-primary/20' : 'bg-primary/5 border-primary/10'
           }`}>
             <button 
               onClick={() => setIsMobilePlatformsOpen(!isMobilePlatformsOpen)}
               className={`px-5 py-3 font-bold text-left flex justify-between items-center transition-colors ${
-                isPlatformActive ? 'text-cyan-800' : 'text-cyan-700'
-              } hover:bg-cyan-50/50`}
+                isPlatformActive ? 'text-primary' : 'text-primary/70'
+              } hover:bg-primary/10`}
             >
               Platforms
               <svg className={`w-4 h-4 transition-transform duration-300 ${isMobilePlatformsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,8 +146,8 @@ function Navbar({ currentPage, setCurrentPage }) {
                     onClick={() => handlePageChange(page)} 
                     className={`text-left px-8 py-3 font-semibold transition-all border-l-2 ${
                       currentPage === page 
-                      ? 'bg-cyan-700 text-white border-cyan-900' 
-                      : 'text-cyan-700 hover:bg-cyan-50 border-transparent hover:border-cyan-500'
+                      ? 'bg-primary text-white border-primary/80' 
+                      : 'text-primary hover:bg-primary/10 border-transparent hover:border-primary/50'
                     }`}
                   >
                     {page.charAt(0).toUpperCase() + page.slice(1)}

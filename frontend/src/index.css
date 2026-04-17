@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=rival@700,800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #008080;
+  --color-primary-dark: #006666;
+  --color-primary-light: #009999;
+}
+
 
 :root {
   font-family: 'Manrope', sans-serif;
@@ -22,7 +30,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background: radial-gradient(circle at top right, rgba(207, 250, 254, 0.5), transparent 400px),
-              radial-gradient(circle at bottom left, rgba(224, 242, 254, 0.5), transparent 400px);
+    radial-gradient(circle at bottom left, rgba(224, 242, 254, 0.5), transparent 400px);
   background-attachment: fixed;
 }
 
@@ -32,3 +40,123 @@ body {
   padding: 0;
 }
 
+/* ═══════════════════════════════════════════
+   HOME PAGE — Cards Wrapper & Connectors
+   ═══════════════════════════════════════════ */
+
+.home-cards-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .home-cards-wrapper {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-cards-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    gap: Clamp(1rem, 2.5vw, 3rem);
+    height: 100%;
+    align-items: stretch;
+  }
+}
+
+/* ── Individual ECG connector (behind cards, in the gap) ── */
+.ecg-connector {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: Clamp(80px, 12vw, 180px);
+  height: auto;
+  aspect-ratio: 1/1;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 1000ms ease 1500ms;
+}
+
+.ecg-connector.visible {
+  opacity: 1;
+}
+
+/* ── Desktop: 3 connectors centered in each gap ── */
+.ecg-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ecg-desktop {
+    display: block;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Precision alignment for connectors in card gaps */
+  .ecg-gap-1 {
+    left: 25%;
+  }
+
+  .ecg-gap-2 {
+    left: 50%;
+  }
+
+  .ecg-gap-3 {
+    left: 75%;
+  }
+}
+
+/* ── Mobile: 2 connectors (one per row, pair connections) ── */
+.ecg-mobile {
+  display: block;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ecg-row-top {
+  top: 25%;
+}
+
+.ecg-row-bottom {
+  top: 75%;
+}
+
+@media (min-width: 1024px) {
+  .ecg-mobile {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   HOME PAGE — Card Hover Effects
+   (does NOT change the white card background)
+   ═══════════════════════════════════════════ */
+.home-card {
+  transition: transform 500ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 500ms cubic-bezier(.22, 1, .36, 1),
+    border-color 400ms ease;
+}
+
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px -12px rgba(8, 145, 178, 0.18),
+    0 8px 20px -6px rgba(8, 145, 178, 0.10);
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+.home-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* ── Company Logo / Brand Styling ── */
+.company-name {
+  font-family: 'Rival', sans-serif;
+  font-weight: 800;
+  /* this gives you Rival Bold */
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+}

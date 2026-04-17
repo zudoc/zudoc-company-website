@@ -1,25 +1,30 @@
 import doctorXpatient from '../assets/aboutPage/dockerXpatient.png';
 import rocket from '../assets/aboutPage/rocket.png';
 import doctor from '../assets/aboutPage/doctor.png';
-import doctorProfile from '../assets/aboutPage/doctorProfile.jpg';
+import doctorProfile from '../assets/aboutPage/doctorProfile.png';
 import hospital from '../assets/aboutPage/hospital.png';
 import labs from '../assets/aboutPage/labs.png';
 import patient from '../assets/aboutPage/patient.png';
-import patientProfile from '../assets/aboutPage/patientProfile.jpg';
+import patientProfile from '../assets/aboutPage/patientProfile.png';
 import zudocApp from '../assets/aboutPage/zudocApp.png';
+import aboutHeroImg from '../assets/aboutPage/heroImage.png';
+import hwdece from '../assets/aboutPage/hwdece.png';
+import hwdmdu from '../assets/aboutPage/hwdmdu.png';
+import hwdsw from '../assets/aboutPage/hwdsw.png';
 
 export const aboutContent = {
   hero: {
     badge: "Our Story",
     titleLine1: "We exist to bring",
     titleHighlight: "trust",
-    titleLine2: "back into\nhealthcare.",
-    subtitle: "Zudoc is rebuilding the clinical foundation with\ntransparency at its core, ensuring every decision is\nbacked by clarity.",
+    titleLine2: "back into healthcare.",
+    subtitle: "Zudoc is rebuilding the clinical foundation with transparency at its core, ensuring every decision is backed by clarity.",
     primaryButton: "Get Started",
-    secondaryButton: "See How It Works →"
+    secondaryButton: "See How It Works →",
+    img: aboutHeroImg
   },
   metrics: [
-    { value: "4", suffix: "+", label: "Stakeholder platforms in one ecosystem" },
+    { value: "500", suffix: "+", label: "Stakeholder platforms in one ecosystem" },
     { value: "1", suffix: "", label: "Universal Zudoc ID for every patient" },
     { value: "PTJ", suffix: "", label: "Patient treatment journey visible in real time" },
     { value: "PSAT", suffix: "", label: "Patient satisfaction scored, measured improved" }
@@ -97,8 +102,8 @@ export const aboutContent = {
     subtitle: "Making healthcare simpler, smarter, and more connected for everyone",
     roles: [
       {
-        title: "🧑‍⚕️ Patients",
-        features: ["AI-powered assistant for instant support", "Simplified and easy-to-read reports", "Smart reminders for better health management", "Multilingual support for wider accessibility"],
+        title: "💆 Patients",
+        features: ["Get help instantly with AI", "Easy-to-read reports", "Reminders to stay healthy", "Support in many languages"],
         img: patient
       },
       {
@@ -108,12 +113,12 @@ export const aboutContent = {
       },
       {
         title: "🏥 Hospitals",
-        features: ["Predictive patient load management", "Optimized queue systems", "Automated workflows", "Data-driven analytics"],
+        features: ["Predict patient load", "Faster queues", "Automated processes", "Data insights"],
         img: hospital
       },
       {
-        title: "🧪 Labs",
-        features: ["Structured and standardized reports", "Early abnormality detection", "Reliable quality checks"],
+        title: "🪄 Labs",
+        features: ["Standardized reports", "Reliable quality checks", "Early abnormality detection"],
         img: labs
       }
     ]
@@ -127,9 +132,9 @@ export const aboutContent = {
       title: "How We Deliver",
       subtitle: "We use AI as an enabler — not a replacement — to simplify and enhance healthcare.",
       points: [
-        { icon: "⚡", title: "Simplifying Workflows", description: "Automation that reduces administrative chaos and complexity." },
-        { icon: "🧠", title: "Enhancing Clinical Efficiency", description: "Tools that help doctors do more with less — accurately and efficiently." },
-        { icon: "📊", title: "Making Data Usable", description: "Turning fragmented data into clear, actionable insights." }
+        { img: hwdsw, title: "Simplifying Workflows", description: "Automation that reduces administrative chaos and complexity." },
+        { img: hwdece, title: "Enhancing Clinical Efficiency", description: "Tools that help doctors do more with less — accurately and efficiently." },
+        { img: hwdmdu, title: "Making Data Usable", description: "Turning fragmented data into clear, actionable insights." }
       ]
     },
     whatThisMeans: {
@@ -146,31 +151,48 @@ export const aboutContent = {
       }
     }
   },
-  whyWeDoIt: {
+  whatWeDo: {
     title: "We Love What We Do.",
     subtitlePrefix: "Not because it’s easy — ",
     subtitleHighlight: "but because it matters.",
-    cards: [
-      {
-        title: "Core Value",
-        description: "Empathy First. We design for people, not just patients. we prioritizing the emotions journey of care as much as the clinical outcome.",
-        bgColor: "bg-zinc-800"
-      },
-      {
-        title: "Our Mission",
-        description: "To accelerate the transition to transparent healthcare by empowering doctors and patients with AI-driven clarity and empathy.",
-        bgColor: "bg-zinc-900"
-      },
-      {
-        title: "Our Vision",
-        description: "A world where healthcare decisions are never made in the dark, and every patient receives the best care possible through total clarity.",
-        bgColor: "bg-teal-600"
-      }
-    ]
+    coreValues: {
+      title: "Core Values",
+      description: "The guiding principle behind everything we do at Zudoc.",
+      items: [
+        {
+          title: "People First",
+          description: "We prioritize people, not just patients.",
+          icon: "people"
+        },
+        {
+          title: "Transparency",
+          description: "Clear and honest healthcare experiences.",
+          icon: "transparency"
+        },
+        {
+          title: "Smart care",
+          description: "Technology that simplifies care.",
+          icon: "smart"
+        },
+        {
+          title: "Reliability",
+          description: "Accurate and dependable services.",
+          icon: "reliable"
+        }
+      ]
+    },
+    mission: {
+      title: "Our Mission",
+      description: "To accelerate the transition to transparent healthcare by empowering doctors and patients with AI-driven clarity and empathy."
+    },
+    vision: {
+      title: "Our Vision",
+      description: "A world where healthcare decisions are never made in the dark, and every patient receives the best care possible through total clarity."
+    }
   },
   contact: {
     title: "Get in touch",
-    description: "Book an Appointment to treat your teeth right now.",
+    description: "Our team is just a message away.",
     img: zudocApp,
     button: "Let’s Connect"
   }

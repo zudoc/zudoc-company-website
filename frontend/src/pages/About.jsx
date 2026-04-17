@@ -5,97 +5,64 @@ function About() {
   return (
     <div className="w-full relative flex flex-col justify-start items-center overflow-x-hidden">
       {/* Hero Section */}
-      <div className="w-full max-w-[1440px] px-6 lg:px-20 pt-10 flex flex-col justify-center items-center gap-8 overflow-hidden relative">
-        <div className="w-full flex lg:flex-row flex-col justify-center items-center lg:items-start gap-7 min-h-[590px]">
-          <div className="w-full lg:w-[648px] flex flex-col justify-start z-10">
-  <div className="w-full flex flex-col justify-start items-center lg:items-start gap-6 lg:gap-8">
-    <div className="px-4 py-2 bg-teal-600/10 rounded-full flex justify-center items-center lg:justify-start lg:items-start">
-      <div className="text-center lg:text-left text-teal-600 text-sm font-bold uppercase leading-5 tracking-wider">{aboutContent.hero.badge}</div>
-    </div>
-    
-    <div className="w-full flex flex-col justify-start items-center lg:items-start">
-      <div className="text-center lg:text-left">
-        <span className="text-zinc-900 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleLine1}<br/></span>
-        <span className="text-cyan-700 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]">{aboutContent.hero.titleHighlight}</span>
-        <span className="text-zinc-900 text-5xl lg:text-7xl font-extrabold leading-tight lg:leading-[86.40px]"> {aboutContent.hero.titleLine2}</span>
-      </div>
-    </div>
-    
-    <div className="w-full lg:max-w-[512px] pt-1.5 flex flex-col justify-start items-center lg:items-start">
-      <div className="text-center lg:text-left text-stone-500 text-xl lg:text-2xl font-medium leading-8 whitespace-pre-line">
-        {aboutContent.hero.subtitle}
-      </div>
-    </div>
-    
-    <div className="w-full pt-4 flex flex-col sm:flex-row justify-center lg:justify-start items-center lg:items-start gap-4">
-      <div className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-teal-700 rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] flex justify-center items-center cursor-pointer hover:bg-teal-800 transition-colors">
-        <div className="text-center lg:text-left text-white text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.primaryButton}</div>
-      </div>
-      <div className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-white rounded-[60px] shadow-[0px_15px_10px_-3px_rgba(10,155,138,0.10)] outline outline-[1.63px] outline-teal-700 flex justify-center items-center cursor-pointer hover:bg-slate-50 transition-colors">
-        <div className="text-center lg:text-left text-teal-700 text-xl lg:text-2xl font-semibold leading-8">{aboutContent.hero.secondaryButton}</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-          {/* Decorative shapes background (Hidden on small screens for better reading) */}
-          <div className="hidden lg:block w-[590px] h-[590px] absolute right-[-100px] top-0 rounded-full outline outline-[3px] outline-cyan-700 opacity-20 pointer-events-none" />
-          <div className="hidden lg:block w-[478px] h-[478px] absolute right-0 top-12 bg-cyan-700 rounded-full outline outline-1 outline-cyan-700 opacity-10 pointer-events-none" />
-          
-          <div className="w-full lg:w-[600px] aspect-square relative flex justify-center items-center mt-12 lg:mt-0 z-10">
-            {/* Thin Dashed Orbital Path */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-teal-600/20" />
-            
-            {/* 5 Specific Icon Badges positioned strictly on the circumference */}
-            <div className="absolute top-[-5px] right-[25%] w-10 h-10 bg-teal-800 rounded-full flex justify-center items-center shadow-lg border-2 border-white z-20">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-            </div>
-            <div className="absolute top-[20%] left-[5%] w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-lg border-2 border-teal-600 z-20">
-              <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-            </div>
-            <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-10 h-10 bg-teal-700 rounded-full flex justify-center items-center shadow-lg border-2 border-white z-20">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-            </div>
-            <div className="absolute right-[-10px] top-[40%] w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-lg border-2 border-teal-600 z-20">
-              <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-            </div>
-            <div className="absolute right-[5%] bottom-[15%] w-10 h-10 bg-teal-800 rounded-full flex justify-center items-center shadow-lg border-2 border-white z-20">
-               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" /></svg>
+      <div className="w-full relative flex justify-center items-center pt-4 lg:pt-8 pb-10 lg:pb-16 px-6 lg:px-20 overflow-hidden">
+        <div className="w-full max-w-[1440px] flex flex-col justify-start items-center gap-10 lg:gap-12 relative z-10">
+          <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16">
+            {/* Left Content */}
+            <div className="w-full lg:w-[648px] flex flex-col justify-start items-center lg:items-start gap-6 lg:gap-8">
+              <div className="self-stretch flex flex-col justify-start items-center lg:items-start gap-4 lg:gap-6">
+                <div className="px-4 py-1.5 bg-primary/10 rounded-full inline-flex justify-start items-start">
+                  <div className="text-primary text-xs font-bold font-['Manrope'] uppercase leading-4 tracking-wider">
+                    {aboutContent.hero.badge}
+                  </div>
+                </div>
+                <div className="self-stretch flex flex-col justify-start items-center lg:items-start">
+                  <h1 className="text-zinc-900 text-4xl md:text-5xl lg:text-6xl font-extrabold font-['Manrope'] leading-tight lg:leading-[72px] text-center lg:text-left">
+                    We exist to bring<br/>
+                    <span className="text-primary">trust</span> back into<br/>
+                    healthcare.
+                  </h1>
+                </div>
+                <div className="self-stretch flex flex-col justify-start items-center lg:items-start">
+                  <p className="max-w-[520px] text-stone-500 text-base md:text-lg font-medium font-['Manrope'] leading-6 text-center lg:text-left">
+                    {aboutContent.hero.subtitle}
+                  </p>
+                </div>
+              </div>
+              <div className="self-stretch pt-2 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+                <button className="px-8 py-3.5 bg-primary rounded-[45px] shadow-lg flex justify-center items-center gap-2 hover:bg-primary-dark transition-all text-white text-base lg:text-lg font-semibold font-['Manrope'] leading-6">
+                  {aboutContent.hero.primaryButton}
+                </button>
+                <button className="px-8 py-3.5 bg-white rounded-[45px] shadow-lg border-2 border-primary flex justify-center items-center gap-2 hover:bg-slate-50 transition-all text-primary text-base lg:text-lg font-semibold font-['Manrope'] leading-6">
+                  {aboutContent.hero.secondaryButton.replace(' →', '')}
+                </button>
+              </div>
             </div>
 
-            {/* Core Teal Circle */}
-            <div className="w-[85%] h-[85%] bg-[#007C7C] rounded-full shadow-2xl relative border-4 border-white flex overflow-hidden">
-               {/* Grid Dividers */}
-               <div className="absolute inset-0 flex justify-center z-0">
-                  <div className="w-px h-full bg-white/20" />
-               </div>
-               <div className="absolute inset-0 flex items-center z-0">
-                  <div className="w-full h-px bg-white/20" />
-               </div>
-
-               <div className="grid grid-cols-2 w-full h-full relative z-10">
-                  {/* Top Left - Move closer to center (right align) */}
-                  <div className="p-4 lg:p-10 flex flex-col justify-end items-end text-right">
-                     <div className="text-white text-4xl lg:text-5xl font-bold leading-none">{aboutContent.metrics[0].value}{aboutContent.metrics[0].suffix}</div>
-                     <div className="text-white/80 text-[11px] lg:text-[13px] font-medium mt-2 leading-tight tracking-wide max-w-[140px]">{aboutContent.metrics[0].label}</div>
-                  </div>
-                  {/* Top Right - Move closer to center (left align) */}
-                  <div className="p-4 lg:p-10 flex flex-col justify-end items-start text-left">
-                     <div className="text-white text-4xl lg:text-5xl font-bold leading-none">{aboutContent.metrics[1].value}{aboutContent.metrics[1].suffix}</div>
-                     <div className="text-white/80 text-[11px] lg:text-[13px] font-medium mt-2 leading-tight tracking-wide max-w-[140px]">{aboutContent.metrics[1].label}</div>
-                  </div>
-                  {/* Bottom Left - Move closer to center (right align) */}
-                  <div className="p-4 lg:p-10 flex flex-col justify-start items-end text-right">
-                     <div className="text-white text-4xl lg:text-5xl font-bold leading-none">{aboutContent.metrics[2].value}{aboutContent.metrics[2].suffix}</div>
-                     <div className="text-white/80 text-[11px] lg:text-[13px] font-medium mt-2 leading-tight tracking-wide max-w-[140px]">{aboutContent.metrics[2].label}</div>
-                  </div>
-                  {/* Bottom Right - Move closer to center (left align) */}
-                  <div className="p-4 lg:p-10 flex flex-col justify-start items-start text-left">
-                     <div className="text-white text-4xl lg:text-5xl font-bold leading-none">{aboutContent.metrics[3].value}{aboutContent.metrics[3].suffix}</div>
-                     <div className="text-white/80 text-[11px] lg:text-[13px] font-medium mt-2 leading-tight tracking-wide max-w-[140px]">{aboutContent.metrics[3].label}</div>
-                  </div>
-               </div>
+            {/* Right Content - Rotated Image Card */}
+            <div className="w-full lg:w-[500px] flex justify-center lg:justify-end items-center">
+              <div className="w-full max-w-[440px] aspect-[1.2] p-4 origin-center rotate-[-4deg] bg-stone-50 rounded-[32px] shadow-2xl border border-teal-600/10 flex justify-center items-center">
+                <img 
+                  className="w-full h-full object-cover rounded-2xl" 
+                  src={aboutContent.hero.img} 
+                  alt="Zudoc Story"
+                />
+              </div>
             </div>
+          </div>
+
+          {/* Metrics Section */}
+          <div className="w-full bg-white/80 backdrop-blur-lg grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10 py-8 border-t border-gray-100">
+            {aboutContent.metrics.map((metric, idx) => (
+              <div key={idx} className="flex flex-col justify-start items-center gap-2 text-center px-4">
+                <div className="text-primary text-2xl lg:text-4xl font-bold font-['Manrope'] leading-none">
+                  {metric.value}{metric.suffix}
+                </div>
+                <div className="max-w-[180px] opacity-60 text-black text-xs lg:text-sm font-normal font-['Manrope'] leading-tight">
+                  {metric.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -244,7 +211,9 @@ function About() {
             <div className="flex flex-col gap-6">
               {aboutContent.howWeHelp.howWeDeliver.points.map((pt, idx) => (
                 <div key={idx} className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 bg-cyan-700/10 rounded-xl flex justify-center items-center text-2xl">{pt.icon}</div>
+                  <div className="w-16 h-16 shrink-0 bg-white shadow-sm rounded-xl overflow-hidden flex justify-center items-center border border-gray-100">
+                    <img src={pt.img} alt={pt.title} className="w-full h-full object-cover" />
+                  </div>
                   <div className="flex flex-col gap-1 text-left">
                     <div className="text-zinc-800 text-xl font-bold">{pt.title}</div>
                     <div className="text-stone-500 text-base font-medium">{pt.description}</div>
@@ -268,7 +237,11 @@ function About() {
                   <div className="flex flex-col gap-3 w-full">
                     {group.points.map((pt, pIdx) => (
                       <div key={pIdx} className="flex items-center gap-3">
-                        <div className="w-3.5 h-3.5 bg-teal-700 rounded-sm shrink-0" />
+                        <div className="w-5 h-5 bg-primary rounded-full flex justify-center items-center shrink-0">
+                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
                         <div className="text-stone-500 text-base flex-1 text-left">{pt}</div>
                       </div>
                     ))}
@@ -280,76 +253,192 @@ function About() {
         </div>
       </div>
 
-      {/* Why We Do It Section */}
-      <div className="w-full p-6 lg:p-20 flex flex-col justify-center items-center gap-8 bg-slate-100/50">
-        <div className="w-full max-w-3xl flex flex-col justify-center items-center gap-4 text-center">
-          <div className="text-neutral-900 text-4xl lg:text-5xl font-bold leading-tight">{aboutContent.whyWeDoIt.title}</div>
-          <div className="text-stone-500 text-lg lg:text-xl font-medium">
-            {aboutContent.whyWeDoIt.subtitlePrefix}
-            <span className="text-teal-700 font-bold">{aboutContent.whyWeDoIt.subtitleHighlight}</span>
+      {/* What We Do Section */}
+      <div className="w-full min-h-[812px] py-16 lg:py-24 px-6 lg:px-20 flex flex-col justify-center items-center gap-12 lg:gap-16 bg-slate-50/50">
+        <div className="w-full max-w-4xl flex flex-col justify-center items-center gap-4 text-center">
+          <div className="self-stretch flex flex-col justify-start items-center">
+            <h2 className="text-zinc-900 text-4xl lg:text-5xl font-bold font-['Manrope'] leading-tight lg:leading-[58.80px]">
+              {aboutContent.whatWeDo.title}
+            </h2>
+          </div>
+          <div className="self-stretch flex flex-col justify-start items-center">
+            <p className="text-stone-500 text-lg lg:text-xl font-medium font-['Manrope'] leading-7">
+              {aboutContent.whatWeDo.subtitlePrefix} 
+              <span className="text-teal-700">{aboutContent.whatWeDo.subtitleHighlight}</span>
+            </p>
           </div>
         </div>
-        <div className="w-full max-w-[1280px] grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-          {aboutContent.whyWeDoIt.cards.map((card, idx) => (
-            <div key={idx} className={`p-8 lg:p-10 relative ${card.bgColor} rounded-[48px] flex flex-col justify-start items-start gap-6 overflow-hidden shadow-xl hover:-translate-y-2 transition-all`}>
-               <div className="text-left text-white text-2xl lg:text-3xl font-extrabold z-10">{card.title}</div>
-               <div className="text-left text-white/80 text-lg font-semibold leading-relaxed z-10">{card.description}</div>
-               <div className="w-40 h-40 absolute bottom-[-40px] right-[-40px] rounded-full border-4 border-white/5 pointer-events-none" />
-               <div className="w-60 h-60 absolute bottom-[-60px] right-20 rounded-full border-4 border-white/5 pointer-events-none" />
+
+        {/* Core Values Card */}
+        <div className="w-full max-w-[1280px] p-8 lg:p-12 bg-gradient-to-b from-teal-700 to-cyan-600 rounded-[40px] shadow-2xl border-b-[12px] lg:border-b-[19px] border-cyan-800/30 flex flex-col justify-start items-start gap-8 lg:gap-10">
+          <div className="self-stretch flex flex-col justify-center items-center gap-2 text-center">
+            <h3 className="text-white text-3xl lg:text-4xl font-extrabold font-['Manrope'] leading-tight lg:leading-10">
+              {aboutContent.whatWeDo.coreValues.title}
+            </h3>
+            <p className="text-white/90 text-lg lg:text-xl font-semibold font-['Manrope'] leading-7">
+              {aboutContent.whatWeDo.coreValues.description}
+            </p>
+          </div>
+          
+          <div className="self-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {aboutContent.whatWeDo.coreValues.items.map((item, idx) => (
+              <div key={idx} className="flex-1 min-h-[280px] p-6 lg:p-10 bg-white rounded-3xl flex flex-col justify-center items-center gap-6 shadow-lg hover:shadow-2xl transition-all duration-500 group border border-teal-600/5 hover:border-teal-600/20">
+                <div className="w-20 h-20 relative shrink-0">
+                  <div className="w-20 h-20 left-0 top-0 absolute bg-teal-50 rounded-full group-hover:scale-110 transition-transform duration-500" />
+                  <div className="w-16 h-16 left-[8px] top-[8px] absolute overflow-hidden flex items-center justify-center">
+                    {/* People First Icon */}
+                    {item.icon === 'people' && (
+                      <svg className="w-10 h-10 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    )}
+                    {/* Transparency Icon */}
+                    {item.icon === 'transparency' && (
+                      <svg className="w-10 h-10 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    )}
+                    {/* Smart Care Icon */}
+                    {item.icon === 'smart' && (
+                      <svg className="w-10 h-10 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    )}
+                    {/* Reliability Icon */}
+                    {item.icon === 'reliable' && (
+                      <svg className="w-10 h-10 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <div className="self-stretch flex flex-col justify-start items-center gap-3 text-center">
+                  <div className="text-zinc-800 text-xl lg:text-2xl font-bold font-['Manrope'] leading-tight group-hover:text-teal-700 transition-colors">
+                    {item.title}
+                  </div>
+                  <div className="text-stone-500 text-sm lg:text-base font-semibold font-['Manrope'] leading-relaxed">
+                    {item.description}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mission and Vision Grid */}
+        <div className="w-full max-w-[1280px] grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Mission Card */}
+          <div className="p-8 lg:p-12 relative bg-[var(--Secondary,#3a86ff)] rounded-[40px] flex flex-col justify-start items-start gap-6 overflow-hidden shadow-xl hover:-translate-y-1 transition-transform group">
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <h3 className="text-white text-3xl font-extrabold font-['Manrope'] leading-10">
+                {aboutContent.whatWeDo.mission.title}
+              </h3>
             </div>
-          ))}
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <p className="text-white/90 text-lg lg:text-xl font-semibold font-['Manrope'] leading-relaxed max-w-md">
+                {aboutContent.whatWeDo.mission.description}
+              </p>
+            </div>
+            {/* Decorative Orbs */}
+            <div className="w-40 h-40 absolute bottom-[-40px] right-[-40px] rounded-full border-2 border-white/5 pointer-events-none group-hover:scale-110 transition-transform duration-700" />
+            <div className="w-60 h-60 absolute bottom-[-60px] right-20 rounded-full border-2 border-white/5 pointer-events-none group-hover:scale-110 transition-transform duration-700 delay-100" />
+          </div>
+
+          {/* Vision Card */}
+          <div className="p-8 lg:p-12 relative bg-teal-600 rounded-[40px] flex flex-col justify-start items-start gap-6 overflow-hidden shadow-xl hover:-translate-y-1 transition-transform group">
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <h3 className="text-white text-3xl font-extrabold font-['Manrope'] leading-10">
+                {aboutContent.whatWeDo.vision.title}
+              </h3>
+            </div>
+            <div className="self-stretch flex flex-col justify-start items-start">
+              <p className="text-white/90 text-lg lg:text-xl font-semibold font-['Manrope'] leading-relaxed max-w-md">
+                {aboutContent.whatWeDo.vision.description}
+              </p>
+            </div>
+            {/* Decorative Orbs */}
+            <div className="w-40 h-40 absolute bottom-[-40px] right-[-40px] rounded-full border-2 border-white/10 pointer-events-none group-hover:scale-110 transition-transform duration-700" />
+            <div className="w-60 h-60 absolute bottom-[-60px] right-20 rounded-full border-2 border-white/10 pointer-events-none group-hover:scale-110 transition-transform duration-700 delay-100" />
+          </div>
         </div>
       </div>
 
       {/* Contact Section */}
-      <div className="w-full p-6 lg:p-20 flex flex-col justify-center items-center gap-8">
-        <div className="w-full max-w-[1280px] relative bg-gradient-to-b from-teal-700 to-cyan-600 rounded-[48px] shadow-2xl border-b-[12px] border-teal-500 overflow-hidden flex flex-col lg:flex-row shadow-teal-700/20">
-          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2)_0%,_transparent_70%)] pointer-events-none" />
-          
-          <div className="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col gap-8 z-10 text-left">
+      <div className="w-full relative flex justify-center items-center py-12 lg:py-24 px-6 lg:px-20">
+        <div className="w-full max-w-[1280px] min-h-[570px] relative bg-gradient-to-b from-primary to-primary-light rounded-[48px] lg:rounded-[67px] shadow-2xl border-b-[12px] lg:border-b-[19px] border-primary-dark/80 overflow-hidden flex flex-col lg:flex-row shadow-[0px_23px_47px_-11px_rgba(0,0,0,0.25)]">
+          {/* Main Content Area */}
+          <div className="w-full lg:w-3/5 p-8 lg:p-16 flex flex-col justify-start items-start gap-8 z-10">
             <div className="flex flex-col gap-3">
-              <div className="text-white text-5xl lg:text-7xl font-extrabold leading-tight">{aboutContent.contact.title}</div>
-              <div className="text-white/90 text-lg font-medium">{aboutContent.contact.description}</div>
+              <h2 className="text-white text-4xl md:text-5xl lg:text-7xl font-extrabold font-['Manrope'] leading-tight lg:leading-[86.40px]">
+                {aboutContent.contact.title}
+              </h2>
+              <p className="text-white text-base lg:text-lg font-normal font-['Manrope'] opacity-90">
+                {aboutContent.contact.description}
+              </p>
             </div>
-            
-            <div className="flex flex-col gap-5 w-full max-w-md">
-              <div className="flex flex-col gap-2">
-                <label className="text-white font-medium text-lg">Full name</label>
-                <input 
-                  type="text" 
-                  placeholder="First name" 
-                  className="w-full px-4 py-3 bg-white/95 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-                />
-              </div>
-              <div className="flex flex-col sm:flex-row gap-5">
-                <div className="flex flex-col gap-2 flex-1">
-                  <label className="text-white font-medium text-lg">Email</label>
+
+            <form className="w-full flex flex-col gap-6 lg:gap-8">
+              {/* Full Name Input */}
+              <div className="w-full flex flex-col gap-2">
+                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Full name</label>
+                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
                   <input 
-                    type="email" 
-                    placeholder="you@company.com" 
-                    className="w-full px-4 py-3 bg-white/95 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                    type="text" 
+                    placeholder="First name" 
+                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
                   />
                 </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <label className="text-white font-medium text-lg">Phone number</label>
-                  <div className="flex w-full bg-white/95 rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-cyan-300">
-                    <span className="px-3 py-3 bg-gray-100 text-gray-600 border-r border-gray-200">IN</span>
+              </div>
+
+              {/* Email & Phone Row */}
+              <div className="w-full flex flex-col sm:flex-row gap-6">
+                <div className="flex-1 flex flex-col gap-2">
+                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Email</label>
+                  <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                    <input 
+                      type="email" 
+                      placeholder="you@company.com" 
+                      className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
+                    />
+                  </div>
+                </div>
+
+                <div className="flex-1 flex flex-col gap-2">
+                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Phone number</label>
+                  <div className="w-full bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center overflow-hidden">
+                    <div className="px-4 py-3 border-r border-gray-300 bg-gray-50/50 flex items-center gap-2">
+                      <span className="text-slate-900 text-base font-normal font-['Manrope']">IN</span>
+                      <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                     <input 
                       type="tel" 
                       placeholder="+91 000 000-0000" 
-                      className="w-full px-3 py-3 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none"
+                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
                     />
                   </div>
                 </div>
               </div>
-              <button className="w-full mt-4 py-4 bg-black text-white rounded-2xl font-semibold text-lg hover:bg-gray-900 transition-colors shadow-lg">
-                {aboutContent.contact.button}
+
+              {/* Submit Button */}
+              <button 
+                type="submit"
+                className="w-full h-14 bg-black text-white rounded-2xl font-semibold text-lg hover:bg-gray-900 transition-all shadow-lg flex justify-center items-center group"
+              >
+                <span className="[text-shadow:_0px_3px_3px_rgba(255,255,255,0.1)]">{aboutContent.contact.button}</span>
               </button>
-            </div>
+            </form>
           </div>
 
-          <div className="w-full lg:w-1/2 flex justify-center items-end p-0 lg:px-10 lg:pt-10 lg:pb-0 z-10 mt-10 lg:mt-0">
-            <img className="w-full max-w-sm lg:max-w-md object-contain" src={aboutContent.contact.img} alt="Contact hero" />
+          {/* Image Container */}
+          <div className="w-full lg:w-2/5 relative flex justify-center items-end p-0 mt-8 lg:mt-0 z-0">
+            <img 
+              className="w-full max-w-[320px] lg:max-w-[400px] h-auto object-contain lg:absolute lg:right-[10%] lg:bottom-0" 
+              src={aboutContent.contact.img} 
+              alt="Get in touch" 
+            />
           </div>
         </div>
       </div>

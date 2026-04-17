@@ -39,13 +39,13 @@ function App() {
 
   return (
     <div 
-      className="min-h-screen overflow-x-hidden bg-fixed bg-cover bg-center transition-all duration-500"
+      className="min-h-screen flex flex-col overflow-x-hidden bg-fixed bg-cover bg-center transition-all duration-500"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 
       {/* Main Content Area - Added padding top to account for fixed navbar */}
-      <main className="pt-24 md:pt-28">
+      <main className="flex-1 flex flex-col pt-24 md:pt-28">
         {renderContent()}
       </main>
 
