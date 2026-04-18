@@ -11,7 +11,17 @@ function Footer() {
             <div className="w-10 h-10 bg-transparent rounded-lg flex justify-center items-center p-1">
               <img src={zudocIcon} alt="zudoc" className="w-full h-full object-contain" />
             </div>
-            <div className="text-white text-2xl company-name">zudoc</div>
+            <div 
+              className="text-white text-2xl"
+              style={{ 
+                fontFamily: "'Rival Sans', sans-serif", 
+                fontWeight: 800, 
+                textTransform: 'lowercase', 
+                letterSpacing: '-0.02em' 
+              }}
+            >
+              zudoc
+            </div>
           </div>
           <div className="text-white/70 text-base font-medium leading-relaxed">
             {footerContent.description}

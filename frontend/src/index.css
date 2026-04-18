@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=rival@700,800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -150,13 +149,4 @@ body {
 
 .home-card:active {
   transform: translateY(-2px) scale(0.98);
-}
-
-/* ── Company Logo / Brand Styling ── */
-.company-name {
-  font-family: 'Rival', sans-serif;
-  font-weight: 800;
-  /* this gives you Rival Bold */
-  text-transform: lowercase;
-  letter-spacing: -0.02em;
 }

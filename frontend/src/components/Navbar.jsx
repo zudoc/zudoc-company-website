@@ -22,7 +22,17 @@ function Navbar({ currentPage, setCurrentPage }) {
           onClick={() => handlePageChange('home')}
         >
           <img src={zudocIcon} alt="zudoc" className="w-12 h-12 transition-transform group-hover:scale-110" />
-          <div className="justify-start text-primary text-3xl leading-10 company-name">zudoc</div>
+          <div 
+            className="justify-start text-primary text-3xl leading-10"
+            style={{ 
+              fontFamily: "'Rival Sans', sans-serif", 
+              fontWeight: 800, 
+              textTransform: 'lowercase', 
+              letterSpacing: '-0.02em' 
+            }}
+          >
+            zudoc
+          </div>
         </div>
         
         {/* Mobile Menu Toggle Button */}

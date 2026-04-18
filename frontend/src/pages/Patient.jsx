@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { patientContent } from '../constants/patientContent';
 
 function Patient() {
-  const { hero, familyEcosystem } = patientContent;
+  const { hero, familyEcosystem, careJourney } = patientContent;
   const [activeJourney, setActiveJourney] = useState('opd');
   const [activeAppointmentTab, setActiveAppointmentTab] = useState('today');
   return (
@@ -470,58 +470,33 @@ function Patient() {
           </div>
         </div>
 
-        <div className="self-stretch p-4 md:p-8 bg-white rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-4 md:gap-8 overflow-hidden">
-          <div className="self-stretch flex flex-col sm:flex-row justify-start items-start gap-4 md:gap-8">
-            <div className="w-14 h-14 md:w-20 md:h-20 shrink-0 bg-teal-100 rounded-2xl flex justify-center items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-teal-600 absolute" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div className="self-stretch p-6 md:p-8 bg-white rounded-[32px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-slate-100 flex flex-col justify-start items-start gap-8 overflow-hidden">
+          <div className="self-stretch flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8">
+            <div className="w-14 h-14 bg-teal-100 rounded-xl flex justify-center items-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600">
+                <circle cx="6" cy="19" r="3" />
+                <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+                <circle cx="18" cy="5" r="3" />
+              </svg>
             </div>
-            <div className="flex-1 inline-flex flex-col justify-start items-start gap-1">
-              <div className="self-stretch inline-flex justify-start items-center gap-3">
+            <div className="flex-1 flex flex-col justify-start items-center sm:items-start text-center sm:text-left">
+              <div className="self-stretch inline-flex justify-center sm:justify-start items-center gap-3">
                 <div className="inline-flex flex-col justify-start items-start">
-                  <div className="w-36 h-7 justify-center text-slate-800 text-xl font-bold font-['Manrope'] leading-7">Consultation</div>
-                </div>
-                <div className="px-2 py-0.5 bg-teal-100 rounded-full outline outline-1 outline-offset-[-1px] outline-teal-200 flex justify-start items-center gap-1">
-                  <div className="w-1.5 h-1.5 bg-teal-600 rounded-full" />
-                  <div className="w-14 h-3.5 justify-center text-teal-600 text-[10px] font-bold font-['Manrope'] leading-4">In Progress</div>
-                </div>
-              </div>
-              <div className="self-stretch flex flex-col justify-start items-start">
-                <div className="self-stretch justify-center text-slate-500 text-sm font-medium font-['Manrope'] leading-5">Today, 10:30 AM</div>
-              </div>
-              <div className="w-full max-w-[672px] pt-2.5 pb-[0.75px] flex flex-col justify-start items-start">
-                <div className="w-full justify-center text-slate-600 text-sm font-normal font-['Manrope'] leading-6">You are currently consulting with Dr. Anjali Deshmukh regarding your recent blood test results.</div>
-              </div>
-              <div className="self-stretch pt-5 inline-flex flex-wrap justify-start items-start gap-x-6 gap-y-3">
-                <div className="self-stretch pb-px flex justify-start items-center gap-2">
-                  <div className="w-4 h-4 relative overflow-hidden">
-                    <div className="w-3 h-3 left-[1.60px] top-[1.60px] absolute bg-teal-600" />
+                  <div className="justify-center text-slate-800 text-xl font-bold font-['Manrope'] capitalize leading-7">
+                    {careJourney.opdBottomBox.title}
                   </div>
-                  <div className="w-max justify-center text-slate-700 text-sm font-semibold font-['Manrope'] leading-5">Vitals checked</div>
-                </div>
-                <div className="self-stretch pb-px flex justify-start items-center gap-2">
-                  <div className="w-4 h-4 relative overflow-hidden">
-                    <div className="w-3 h-3 left-[1.60px] top-[1.60px] absolute bg-teal-600" />
-                  </div>
-                  <div className="w-max justify-center text-slate-700 text-sm font-semibold font-['Manrope'] leading-5">Doctor assigned</div>
-                </div>
-                <div className="self-stretch pb-px flex justify-start items-center gap-2">
-                  <div className="w-4 h-4 relative overflow-hidden">
-                    <div className="w-3 h-3 left-[1.60px] top-[1.60px] absolute bg-teal-600" />
-                  </div>
-                  <div className="w-max justify-center text-slate-700 text-sm font-semibold font-['Manrope'] leading-5">Prescription pending</div>
                 </div>
               </div>
-              <div className="self-stretch p-1 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] inline-flex justify-start items-center gap-6">
-                <div className="inline-flex flex-col justify-start items-start">
-                  <div className="w-28 h-5 justify-center text-slate-500 text-sm font-bold font-['Manrope'] leading-5">Wait Time</div>
-                </div>
-                <div className="flex-1 h-3 relative bg-slate-100 rounded-full overflow-hidden">
-                  <div className="w-[50%] h-3 left-0 top-0 absolute bg-teal-600 rounded-full" />
-                </div>
-                <div className="inline-flex flex-col justify-start items-start">
-                  <div className="w-28 h-5 justify-center text-teal-600 text-sm font-bold font-['Manrope'] leading-5">~5 mins left</div>
+              <div className="w-full max-w-[672px] pt-2 flex flex-col justify-start items-start">
+                <div className="w-full justify-center sm:justify-start text-slate-600 text-sm font-normal font-['Manrope'] leading-6">
+                  {careJourney.opdBottomBox.description}
                 </div>
               </div>
+            </div>
+            <div className="w-14 h-14 bg-gradient-to-b from-teal-500 to-teal-600 rounded-full flex justify-center items-center shrink-0 shadow-sm border border-teal-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 7 10 17 5 12" />
+              </svg>
             </div>
           </div>
         </div>

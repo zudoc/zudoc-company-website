@@ -55,6 +55,10 @@ export const patientContent = {
         "Medicines administered",
         "Doctor visits scheduled"
       ]
+    },
+    opdBottomBox: {
+      title: "Track Every Step Of Your Journey",
+      description: "Real- Time updates, automated reminds, and full transparency at every stage."
     }
   },
   healthRecords: {
