@@ -35,7 +35,7 @@ function Laboratory() {
   const currentSlots = currentTab.slots;
 
   return (
-    <div className="flex flex-col justify-start items-center overflow-hidden w-full">
+    <div className="flex flex-col justify-start items-center overflow-hidden w-full bg-[#F7F9FB]">
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
       <div className="self-stretch p-3 sm:p-4 md:p-2.5 flex flex-col justify-center items-center">
@@ -45,15 +45,15 @@ function Laboratory() {
             {/* Left – text */}
             <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-5 md:gap-6">
               <div className="px-4 py-1.5 bg-gray-200 rounded-full inline-flex justify-start items-center gap-2">
-                <div className="w-3 h-3 bg-teal-800 rounded-sm shrink-0" />
-                <span className="text-teal-800 text-xs sm:text-sm font-bold font-['Manrope'] uppercase leading-4">
+                <div className="w-3 h-3 bg-primary rounded-sm shrink-0" />
+                <span className="text-primary text-xs sm:text-sm font-bold font-['Manrope'] uppercase leading-4">
                   {hero.badge}
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-['Manrope'] leading-[1.2]">
                 <span className="text-neutral-800">{hero.title.line1}<br /></span>
-                <span className="text-cyan-700">{hero.title.line2}</span>
+                <span className="text-primary">{hero.title.line2}</span>
                 <span className="text-neutral-800"> {hero.title.line3}</span>
               </h1>
 
@@ -62,7 +62,7 @@ function Laboratory() {
               </p>
 
               <div className="pt-2">
-                <button className="px-6 sm:px-7 py-3 bg-teal-700 rounded-[45px] shadow-[0px_11.25px_7.5px_-2.25px_rgba(10,155,138,0.10)] border border-teal-700 flex justify-center items-center gap-2 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <button className="px-6 sm:px-7 py-3 bg-primary rounded-[45px] shadow-[0px_11.25px_7.5px_-2.25px_rgba(0,128,128,0.10)] border border-primary flex justify-center items-center gap-2 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                   <span className="text-white text-base sm:text-lg font-semibold font-['Manrope'] leading-6">
                     {hero.buttonText}
                   </span>
@@ -72,7 +72,7 @@ function Laboratory() {
 
             {/* Right – card mockup */}
             <div className="w-full lg:flex-1 relative flex justify-center items-center mt-8 lg:mt-0 group min-h-64">
-              <div className="absolute w-full max-w-[539px] h-72 md:h-96 bg-gradient-to-br from-teal-800/5 to-cyan-700/10 rounded-full blur-xl" />
+
               <div className="relative w-full max-w-[380px] md:max-w-[517px] p-4 md:p-5 bg-white rounded-[24px] md:rounded-[30px] shadow-[0px_31.46px_78.66px_0px_rgba(24,28,29,0.08)] outline outline-[0.79px] outline-neutral-300/10 flex flex-col justify-start items-start gap-4 md:gap-6 origin-top-left rotate-2 group-hover:rotate-0 transition-transform duration-500 z-10">
                 <img
                   className="self-stretch rounded-xl md:rounded-2xl w-full object-cover"
@@ -87,7 +87,7 @@ function Laboratory() {
                       {hero.systemStatus.label}
                     </span>
                   </div>
-                  <span className="text-teal-800 text-lg md:text-xl font-extrabold font-['Manrope'] leading-7">
+                  <span className="text-primary text-lg md:text-xl font-extrabold font-['Manrope'] leading-7">
                     {hero.systemStatus.percentage}
                   </span>
                   <span className="text-zinc-700 text-[7px] md:text-[8.18px] font-medium font-['Manrope'] leading-3">

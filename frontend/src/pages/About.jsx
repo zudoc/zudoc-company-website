@@ -3,7 +3,7 @@ import { aboutContent } from '../constants/aboutContent';
 
 function About() {
   return (
-    <div className="w-full relative flex flex-col justify-start items-center overflow-x-hidden">
+    <div className="w-full relative flex flex-col justify-start items-center overflow-x-hidden bg-[#F7F9FB]">
       {/* Hero Section */}
       <div className="w-full relative flex justify-center items-center pt-4 lg:pt-8 pb-10 lg:pb-16 px-6 lg:px-20 overflow-hidden">
         <div className="w-full max-w-[1440px] flex flex-col justify-start items-center gap-10 lg:gap-12 relative z-10">

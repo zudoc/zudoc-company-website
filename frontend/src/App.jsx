@@ -40,7 +40,10 @@ function App() {
   return (
     <div 
       className="min-h-screen flex flex-col overflow-x-hidden bg-fixed bg-cover bg-center transition-all duration-500"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ 
+        backgroundImage: currentPage === 'home' ? `url(${backgroundImage})` : 'none',
+        backgroundColor: currentPage === 'home' ? 'transparent' : '#F7F9FB'
+      }}
     >
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
 

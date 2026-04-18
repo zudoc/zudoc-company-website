@@ -7,17 +7,14 @@ function Hospital() {
   const { hero, trackPatient, resourceAvailability, controlTower, insights, cta } = hospitalContent;
 
   return (
-    <main className="relative pt-20 pb-32 flex flex-col items-center overflow-hidden">
-      {/* Decorative Background Element */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-200/30 rounded-full blur-[120px] -z-10 animate-pulse" />
-
+    <main className="relative pt-20 pb-32 flex flex-col items-center overflow-hidden bg-[#F7F9FB]">
       {/* Hero Section */}
       <section className="w-full max-w-7xl px-6 flex flex-col lg:flex-row items-center gap-12 animate-in fade-in slide-in-from-bottom duration-1000">
         <div className="flex-1 space-y-8 text-center lg:text-left">
           <h1 className="text-5xl md:text-7xl font-extrabold text-neutral-800 leading-[1.1] tracking-tight">
             {hero.titleTop} <br />
             {hero.titleMiddle} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
               {hero.titleBottom}
             </span>
           </h1>
@@ -25,7 +22,7 @@ function Hospital() {
             {hero.description}
           </p>
           <div className="pt-4 flex justify-center lg:justify-start">
-             <button className="px-8 py-4 bg-teal-700 hover:bg-teal-800 transition-colors rounded-full text-white text-lg font-semibold shadow-lg shadow-teal-700/20">
+             <button className="px-8 py-4 bg-primary hover:bg-primary-dark transition-colors rounded-full text-white text-lg font-semibold shadow-lg shadow-primary/20">
                {hero.buttonText}
              </button>
           </div>

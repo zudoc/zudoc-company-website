@@ -5,20 +5,17 @@ function Doctor() {
   const { hero, aiEngagement, schedule, treatmentJourney, postCare, controlTower, cta } = doctorContent
 
   return (
-    <div className="relative w-full flex-1 flex flex-col items-center overflow-hidden font-['Manrope']">
-      {/* Decorative Background Element like Home */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-200/20 rounded-full blur-[140px] -z-10 animate-pulse pointer-events-none" />
-
+    <div className="relative w-full flex-1 flex flex-col items-center overflow-hidden font-['Manrope'] bg-[#F7F9FB]">
       <section className="w-full max-w-[1280px] px-6 md:px-10 py-10">
         <div className="rounded-[32px] flex flex-col lg:flex-row items-start gap-6">
           {/* Left Content */}
           <div className="flex-1 flex flex-col gap-6">
             {/* Badge */}
             <div className="px-4 py-1.5 bg-gray-200 rounded-full inline-flex items-center gap-2 w-fit">
-              <svg className="w-3 h-3 text-teal-800" viewBox="0 0 12 12" fill="currentColor">
+              <svg className="w-3 h-3 text-primary" viewBox="0 0 12 12" fill="currentColor">
                 <circle cx="6" cy="6" r="5" />
               </svg>
-              <span className="text-teal-800 text-sm font-bold uppercase leading-4">
+              <span className="text-primary text-sm font-bold uppercase leading-4">
                 {hero.badge}
               </span>
             </div>
@@ -27,7 +24,7 @@ function Doctor() {
             <h1 className="text-4xl md:text-5xl font-extrabold leading-[1.2] text-neutral-800">
               {hero.title.line1}<br />
               {hero.title.line2}<br />
-              <span className="text-cyan-700">{hero.title.line3}</span>
+              <span className="text-primary">{hero.title.line3}</span>
             </h1>
 
             {/* Description */}
@@ -37,7 +34,7 @@ function Doctor() {
 
             {/* Button */}
             <div className="pt-4">
-              <button className="px-7 py-3 bg-teal-700 hover:bg-teal-800 rounded-[45px] shadow-[0px_11.25px_7.5px_-2.25px_rgba(10,155,138,0.10)] text-white text-lg font-semibold leading-6 transition-all duration-300 cursor-pointer">
+              <button className="px-7 py-3 bg-primary hover:bg-primary-dark rounded-[45px] shadow-[0px_11.25px_7.5px_-2.25px_rgba(0,128,128,0.10)] text-white text-lg font-semibold leading-6 transition-all duration-300 cursor-pointer">
                 {hero.buttonText}
               </button>
             </div>

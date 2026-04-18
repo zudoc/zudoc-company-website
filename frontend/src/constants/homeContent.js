@@ -13,28 +13,28 @@ export const homeContent = {
     { 
       id: "patient",
       title: "Patient", 
-      sub: "Book & Manage", 
+      sub: "Book & manage", 
       icon: patientIcon, 
       color: "from-blue-500 to-cyan-500" 
     },
     { 
       id: "doctor",
       title: "Doctor", 
-      sub: "Manage Patients", 
+      sub: "Manage patients", 
       icon: doctorIcon, 
       color: "from-cyan-500 to-teal-500" 
     },
     { 
       id: "hospital",
       title: "Hospital", 
-      sub: "Run Operations", 
+      sub: "Run operations", 
       icon: hospitalIcon, 
       color: "from-sky-500 to-indigo-500" 
     },
     { 
       id: "laboratory",
       title: "Laboratory", 
-      sub: "Fast Testing", 
+      sub: "Fast testing", 
       icon: labIcon, 
       color: "from-teal-500 to-emerald-500" 
     }
