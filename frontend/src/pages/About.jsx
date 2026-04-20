@@ -488,56 +488,121 @@ function About() {
               </p>
             </div>
 
-            <form className="w-full flex flex-col gap-6 lg:gap-8">
-              {/* Full Name Input */}
+            <form
+              action="https://forms.zohopublic.in/krishnarajsrzu1/form/WebsiteEnquiry/formperma/ruyJnu0Z1RIc6Y76unkRYJaaNseOuaJM55SXLYO9Xo4/htmlRecords/submit"
+              name="form"
+              id="form"
+              method="POST"
+              acceptCharset="UTF-8"
+              encType="multipart/form-data"
+              className="w-full flex flex-col gap-6 lg:gap-8"
+            >
+              {/* Hidden fields required by Zoho */}
+              <input type="hidden" name="zf_referrer_name" value="" />
+              <input type="hidden" name="zf_redirect_url" value="" />
+              <input type="hidden" name="zc_gad" value="" />
+
+              {/* First Name */}
               <div className="w-full flex flex-col gap-2">
-                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Full name</label>
+                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
+                  Name <em>*</em>
+                </label>
                 <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                  <input 
-                    type="text" 
-                    placeholder="First name" 
-                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_First"
+                    fieldtype="7"
+                    placeholder="First name"
+                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                    required
                   />
                 </div>
               </div>
 
-              {/* Email & Phone Row */}
+              {/* Last Name */}
+              <div className="w-full flex flex-col gap-2">
+                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
+                  Last Name
+                </label>
+                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_Last"
+                    fieldtype="7"
+                    placeholder="Last name"
+                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                  />
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="w-full flex flex-col gap-2">
+                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
+                  Email <em>*</em>
+                </label>
+                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Email"
+                    fieldtype="9"
+                    placeholder="you@company.com"
+                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Phone */}
               <div className="w-full flex flex-col sm:flex-row gap-6">
                 <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Email</label>
-                  <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                    <input 
-                      type="email" 
-                      placeholder="you@company.com" 
-                      className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
-                    />
-                  </div>
-                </div>
-
-                <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Phone number</label>
+                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
+                    Phone
+                  </label>
                   <div className="w-full bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center overflow-hidden">
-                    <div className="px-4 py-3 border-r border-gray-300 bg-gray-50/50 flex items-center gap-2">
-                      <span className="text-slate-900 text-base font-normal font-['Manrope']">IN</span>
-                      <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                    <input 
-                      type="tel" 
-                      placeholder="+91 000 000-0000" 
-                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']" 
+                    <input
+                      type="text"
+                      name="PhoneNumber_countrycodeval"
+                      maxLength="10"
+                      id="international_PhoneNumber_countrycodeval"
+                      placeholder=""
+                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                    />
+                    <input
+                      type="text"
+                      name="PhoneNumber_countrycode"
+                      maxLength="20"
+                      id="international_PhoneNumber_countrycode"
+                      placeholder=""
+                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
                     />
                   </div>
                 </div>
               </div>
 
+              {/* Message */}
+              <div className="w-full flex flex-col gap-2">
+                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
+                  Any messages for us?
+                </label>
+                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                  <textarea
+                    name="MultiLine"
+                    maxLength="65535"
+                    placeholder=""
+                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                  ></textarea>
+                </div>
+              </div>
+
               {/* Submit Button */}
-              <button 
+              <button
                 type="submit"
                 className="w-full h-14 bg-black text-white rounded-2xl font-semibold text-lg hover:bg-gray-900 transition-all shadow-lg flex justify-center items-center group"
               >
-                <span className="[text-shadow:_0px_3px_3px_rgba(255,255,255,0.1)]">{aboutContent.contact.button}</span>
+                <span className="[text-shadow:_0px_3px_3px_rgba(255,255,255,0.1)]">Submit</span>
               </button>
             </form>
           </div>
