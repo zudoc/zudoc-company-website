@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { aboutContent } from '../constants/aboutContent';
 
 function About() {
@@ -488,123 +488,120 @@ function About() {
               </p>
             </div>
 
-            <form
-              action="https://forms.zohopublic.in/krishnarajsrzu1/form/WebsiteEnquiry/formperma/ruyJnu0Z1RIc6Y76unkRYJaaNseOuaJM55SXLYO9Xo4/htmlRecords/submit"
-              name="form"
-              id="form"
-              method="POST"
-              acceptCharset="UTF-8"
-              encType="multipart/form-data"
-              className="w-full flex flex-col gap-6 lg:gap-8"
-            >
-              {/* Hidden fields required by Zoho */}
-              <input type="hidden" name="zf_referrer_name" value="" />
-              <input type="hidden" name="zf_redirect_url" value="" />
-              <input type="hidden" name="zc_gad" value="" />
+            {/* Contact Form with splash logic */}
+            {/** Splash state logic **/}
+            {(() => {
+              const [splash, setSplash] = React.useState(false);
+              const [form, setForm] = React.useState({
+                Name: '',
+                Email: '',
+                Phone: '',
+              });
+              const [submitting, setSubmitting] = React.useState(false);
 
-              {/* First Name */}
-              <div className="w-full flex flex-col gap-2">
-                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
-                  Name <em>*</em>
-                </label>
-                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                  <input
-                    type="text"
-                    maxLength="255"
-                    name="Name_First"
-                    fieldtype="7"
-                    placeholder="First name"
-                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                    required
-                  />
-                </div>
-              </div>
+              const handleChange = (e) => {
+                const { name, value } = e.target;
+                setForm((prev) => ({ ...prev, [name]: value }));
+              };
 
-              {/* Last Name */}
-              <div className="w-full flex flex-col gap-2">
-                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
-                  Last Name
-                </label>
-                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                  <input
-                    type="text"
-                    maxLength="255"
-                    name="Name_Last"
-                    fieldtype="7"
-                    placeholder="Last name"
-                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                  />
-                </div>
-              </div>
+              const handleSubmit = async (e) => {
+                e.preventDefault();
+                setSubmitting(true);
+                // Prepare Zoho field mapping
+                const data = new FormData();
+                data.append('Name_First', form.Name);
+                data.append('Email', form.Email);
+                data.append('PhoneNumber_countrycodeval', form.Phone);
+                // Required hidden fields
+                data.append('zf_referrer_name', '');
+                data.append('zf_redirect_url', '');
+                data.append('zc_gad', '');
+                try {
+                  await fetch('https://forms.zohopublic.in/krishnarajsrzu1/form/WebsiteEnquiry/formperma/ruyJnu0Z1RIc6Y76unkRYJaaNseOuaJM55SXLYO9Xo4/htmlRecords/submit', {
+                    method: 'POST',
+                    body: data,
+                    mode: 'no-cors',
+                  });
+                  setSplash(true);
+                } catch (err) {
+                  setSplash(true); // fallback: show splash even on error
+                }
+                setSubmitting(false);
+              };
 
-              {/* Email */}
-              <div className="w-full flex flex-col gap-2">
-                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
-                  Email <em>*</em>
-                </label>
-                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                  <input
-                    type="text"
-                    maxLength="255"
-                    name="Email"
-                    fieldtype="9"
-                    placeholder="you@company.com"
-                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="w-full flex flex-col sm:flex-row gap-6">
-                <div className="flex-1 flex flex-col gap-2">
-                  <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
-                    Phone
-                  </label>
-                  <div className="w-full bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center overflow-hidden">
-                    <input
-                      type="text"
-                      name="PhoneNumber_countrycodeval"
-                      maxLength="10"
-                      id="international_PhoneNumber_countrycodeval"
-                      placeholder=""
-                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                    />
-                    <input
-                      type="text"
-                      name="PhoneNumber_countrycode"
-                      maxLength="20"
-                      id="international_PhoneNumber_countrycode"
-                      placeholder=""
-                      className="flex-1 px-4 py-3 bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                    />
+              if (splash) {
+                return (
+                  <div className="w-full flex flex-col items-center justify-center py-16">
+                    <div className="text-white text-3xl lg:text-4xl font-bold mb-4">Thank you!</div>
+                    <div className="text-white text-lg">Your enquiry has been submitted. We will get in touch soon.</div>
                   </div>
-                </div>
-              </div>
+                );
+              }
 
-              {/* Message */}
-              <div className="w-full flex flex-col gap-2">
-                <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">
-                  Any messages for us?
-                </label>
-                <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
-                  <textarea
-                    name="MultiLine"
-                    maxLength="65535"
-                    placeholder=""
-                    className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
-                  ></textarea>
-                </div>
-              </div>
+              return (
+                <form className="w-full flex flex-col gap-6 lg:gap-8" onSubmit={handleSubmit}>
+                  {/* Full Name */}
+                  <div className="w-full flex flex-col gap-2">
+                    <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Full name</label>
+                    <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                      <input
+                        type="text"
+                        name="Name"
+                        maxLength="255"
+                        placeholder="Full name"
+                        className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                        value={form.Name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full h-14 bg-black text-white rounded-2xl font-semibold text-lg hover:bg-gray-900 transition-all shadow-lg flex justify-center items-center group"
-              >
-                <span className="[text-shadow:_0px_3px_3px_rgba(255,255,255,0.1)]">Submit</span>
-              </button>
-            </form>
+                  {/* Email */}
+                  <div className="w-full flex flex-col gap-2">
+                    <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Email</label>
+                    <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                      <input
+                        type="email"
+                        name="Email"
+                        maxLength="255"
+                        placeholder="you@company.com"
+                        className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                        value={form.Email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="w-full flex flex-col gap-2">
+                    <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Phone number</label>
+                    <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                      <input
+                        type="text"
+                        name="Phone"
+                        maxLength="20"
+                        placeholder="Phone number"
+                        className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                        value={form.Phone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full h-14 bg-black text-white rounded-2xl font-semibold text-lg hover:bg-gray-900 transition-all shadow-lg flex justify-center items-center group"
+                    disabled={submitting}
+                  >
+                    <span className="[text-shadow:_0px_3px_3px_rgba(255,255,255,0.1)]">{submitting ? 'Submitting...' : 'Submit'}</span>
+                  </button>
+                </form>
+              );
+            })()}
           </div>
 
           {/* Image Container */}
