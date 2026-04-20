@@ -496,6 +496,8 @@ function About() {
                 Name: '',
                 Email: '',
                 Phone: '',
+                // Name_Last: '',
+                // Message: '',
               });
               const [submitting, setSubmitting] = React.useState(false);
 
@@ -512,6 +514,8 @@ function About() {
                 data.append('Name_First', form.Name);
                 data.append('Email', form.Email);
                 data.append('PhoneNumber_countrycodeval', form.Phone);
+                // data.append('Name_Last', form.Name_Last); // Commented out
+                // data.append('MultiLine', form.Message); // Commented out
                 // Required hidden fields
                 data.append('zf_referrer_name', '');
                 data.append('zf_redirect_url', '');
@@ -557,6 +561,24 @@ function About() {
                     </div>
                   </div>
 
+                  {/* Last Name (commented out) */}
+                  {false && (
+                    <div className="w-full flex flex-col gap-2">
+                      <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Last Name</label>
+                      <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                        <input
+                          type="text"
+                          name="Name_Last"
+                          maxLength="255"
+                          placeholder="Last name"
+                          className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                          value={form.Name_Last}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   {/* Email */}
                   <div className="w-full flex flex-col gap-2">
                     <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Email</label>
@@ -590,6 +612,23 @@ function About() {
                       />
                     </div>
                   </div>
+
+                  {/* Message (commented out) */}
+                  {false && (
+                    <div className="w-full flex flex-col gap-2">
+                      <label className="text-white text-lg font-normal font-['Manrope'] tracking-tight">Any messages for us?</label>
+                      <div className="w-full px-4 py-3 bg-white/90 rounded-xl shadow-sm border border-gray-300 flex items-center">
+                        <textarea
+                          name="Message"
+                          maxLength="65535"
+                          placeholder=""
+                          className="w-full bg-transparent outline-none text-gray-800 placeholder-gray-500 text-sm font-normal font-['Manrope']"
+                          value={form.Message}
+                          onChange={handleChange}
+                        ></textarea>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <button
